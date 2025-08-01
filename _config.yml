@@ -1,7 +1,7 @@
 title: Advanced Python Programming
 description: Economics Master - Python Course
-baseurl: "/your-repo-name"
-url: "https://yourusername.github.io"
+baseurl: "/advanced_programming_python"
+url: "https://knuxv.github.io"
 
 markdown: kramdown
 highlighter: rouge
