@@ -7,7 +7,11 @@ title: Home
 Welcome to this advanced programming class (with Python and more)
 
 ## Course Overview
-This course is designed for economics master students to develop practical programming skills. While you won't become full-time developers, you'll gain essential technical literacy for modern economic analysis and research.
+In this class, we will discover various programming tools and concepts that might be useful to you in the future
+
+## Polling
+
+Before we start, please [complete this quick poll](lessons/00-polls.md) to help me tailor the class.
 
 ---
 
@@ -36,7 +40,8 @@ This course is designed for economics master students to develop practical progr
 - **Quick SQL recap:** Essential queries for data analysis
 
 **Resources:**
-- [Exercises](exercises/01-shell/) | [Solutions](solutions/01-shell/)
+- [Exercise 1](exercices/01-architecture.md) | [Solution 1](solutions/01-architecture.md/)
+- [Exercise 2](exercises/02-shell.md/) | [Solution 1](solutions/02-shell.md/)
 
 ---
 
