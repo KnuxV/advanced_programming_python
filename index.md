@@ -11,9 +11,12 @@ In this class, we will discover various programming tools and concepts that migh
 
 ## Polling
 
-Before we start, please answer these quick polls:
+Before we start, please answer these quick polls, it's anonymous:
+
 1. **Vote on language preference:** [English vs French for this class](https://strawpoll.com/2ayLQXkzvn4)
-2. **Vote on your OS:** [Windows, Mac, Linux, etc.](https://strawpoll.com/w4nWWVrwQnA)
+2. **Vote on your OS:** [Windows, Mac, Linux, etc.](https://strawpoll.com/w4nWWVrwQnA)  
+   
+
 ---
 
 ## Course Materials
