@@ -92,9 +92,6 @@ git config --global user.email "your.email@example.com"
 # Set your default branch name to 'main' (modern standard)
 git config --global init.defaultBranch main
 
-# Set your preferred editor (optional)
-git config --global core.editor "code --wait"  # VS Code
-# or
 git config --global core.editor "nano"         # Simple terminal editor
 
 # View your configuration
@@ -169,7 +166,6 @@ git diff --staged          # See what's ready to commit
 git add file.py            # Stage specific file
 git add .                  # Stage all changes (use carefully!)
 git add *.py              # Stage all Python files
-git add -p                # Interactive staging (choose chunks)
 
 # 4. Commit with meaningful message
 git commit -m "Add user authentication feature"
