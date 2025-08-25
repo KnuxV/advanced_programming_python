@@ -21,7 +21,7 @@ Help shape the course by participating in these anonymous polls:
 ## Course Modules
 
 ### Module 1: Linux Environment & Shell
-**📚 [Lesson: Shell Introduction]({{ '/lessons/01-shell-intro.md' | relative_url }})**
+**📚 [Lesson: Shell Introduction]({{ '/lessons/01-shell-intro.html' | relative_url }})**
 
 #### Topics Covered:
 - **Development Environment Setup**
@@ -31,7 +31,7 @@ Help shape the course by participating in these anonymous polls:
     - Native Linux: Full installation guide
 
 - **Essential Terminal Skills**
-    - File system navigation and management
+    - File system navigation and management (20+ essential commands)
     - Text processing with grep, sed, awk
     - Process monitoring and control
     - Shell scripting basics
@@ -46,14 +46,14 @@ Help shape the course by participating in these anonymous polls:
     - Essential SQL queries for data manipulation
 
 #### Practice Exercises:
-- [Computer Architecture Basics]({{ '/exercises/01-architecture.md' | relative_url }})
-- [Shell Commands Practice]({{ '/exercises/02-shell.md' | relative_url }})
-- [Detective Story: Shell Investigation]({{ '/exercises/03-detective_story.md' | relative_url }})
+- [Computer Architecture Basics]({{ '/exercices/01-architecture/01-architecture.html' | relative_url }})
+- [Shell Commands Practice]({{ '/exercices/02-shell/02-shell.html' | relative_url }})
+- [Detective Story: Shell Investigation]({{ '/exercices/03-detective_story.html' | relative_url }})
 
 ---
 
 ### Module 2: Python Environment Management
-**📚 [Lesson: Python Environment Setup]({{ '/lessons/02-python-env.md' | relative_url }})**
+**📚 [Lesson: Python Environment Setup]({{ '/lessons/02-python-env.html' | relative_url }})**
 
 #### Topics Covered:
 - **Why Virtual Environments Matter**
@@ -62,9 +62,8 @@ Help shape the course by participating in these anonymous polls:
     - Project isolation strategies
 
 - **Environment Management Tools**
-    - **venv**: Python's standard solution
-    - **conda**: Scientific computing powerhouse
-    - **uv**: Modern, fast Python tooling
+    - **venv**: Python's standard solution (simple and reliable)
+    - **conda**: Scientific computing powerhouse (great for data science packages)
 
 - **Practical Workflows**
     - Creating and activating virtual environments
@@ -75,7 +74,7 @@ Help shape the course by participating in these anonymous polls:
 ---
 
 ### Module 3: Version Control with Git
-**📚 [Lesson: Git Version Control]({{ '/lessons/03-git-version-control.md' | relative_url }})**
+**📚 [Lesson: Git Version Control]({{ '/lessons/03-git-version-control.html' | relative_url }})**
 
 #### Topics Covered:
 - **Git Fundamentals**
@@ -96,8 +95,8 @@ Help shape the course by participating in these anonymous polls:
     - Team collaboration best practices
 
 #### Practice Exercises:
-- [Scrabble: Git Merge Exercise]({{ '/exercises/04-scrabble_git_exercise.md' | relative_url }})
-- [Pull Requests Workshop]({{ '/exercises/05-pull_requests.md' | relative_url }})
+- [Scrabble: Git Merge Exercise]({{ '/exercices/04-scrabble_git_exercice.html' | relative_url }})
+- [Pull Requests Workshop]({{ '/exercices/05-pull_requests.html' | relative_url }})
 
 ---
 
@@ -117,23 +116,23 @@ Contribute to our course materials and earn 0.5-1 bonus points on your final gra
 1. Fork the repository
 2. Make your improvements
 3. Submit a pull request
-4. See the [Pull Requests exercise]({{ '/exercises/05-pull_requests.md' | relative_url }}) for detailed instructions
+4. See the [Pull Requests exercise]({{ '/exercices/05-pull_requests.html' | relative_url }}) for detailed instructions
 
 ---
 
 ## Quick Navigation
 
 ### 📖 All Lessons
-- [Shell Introduction]({{ '/lessons/01-shell-intro.md' | relative_url }})
-- [Python Environment]({{ '/lessons/02-python-env.md' | relative_url }})
-- [Git Version Control]({{ '/lessons/03-git-version-control.md' | relative_url }})
+- [Shell Introduction]({{ '/lessons/01-shell-intro.html' | relative_url }})
+- [Python Environment]({{ '/lessons/02-python-env.html' | relative_url }})
+- [Git Version Control]({{ '/lessons/03-git-version-control.html' | relative_url }})
 
 ### 💪 All Exercises
-- [Computer Architecture]({{ '/exercises/01-architecture.md' | relative_url }})
-- [Shell Commands]({{ '/exercises/02-shell.md' | relative_url }})
-- [Detective Story]({{ '/exercises/03-detective_story.md' | relative_url }})
-- [Git Scrabble]({{ '/exercises/04-scrabble_git_exercise.md' | relative_url }})
-- [Pull Requests]({{ '/exercises/05-pull_requests.md' | relative_url }})
+- [Computer Architecture]({{ '/exercices/01-architecture/01-architecture.html' | relative_url }})
+- [Shell Commands]({{ '/exercices/02-shell/02-shell.html' | relative_url }})
+- [Detective Story]({{ '/exercices/03-detective_story.html' | relative_url }})
+- [Git Scrabble]({{ '/exercices/04-scrabble_git_exercice.html' | relative_url }})
+- [Pull Requests]({{ '/exercices/05-pull_requests.html' | relative_url }})
 
 ### 🔗 External Resources
 - [Course Repository on GitHub](https://github.com/KnuxV/advanced_programming_python)
