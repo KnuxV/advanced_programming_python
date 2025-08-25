@@ -42,8 +42,9 @@ Before we start, please answer these quick polls, it's anonymous:
 - **Quick SQL recap:** Essential queries for data analysis
 
 **Resources:**
-- [Exercise 1]({{ '/exercises/01-architecture.md' | relative_url }}) \| [Solution 1]({{ '/solutions/01-architecture.md' | relative_url }})
-- [Exercise 2]({{ '/exercises/02-shell.md' | relative_url }}) \| [Solution 2]({{ '/solutions/02-shell.md' | relative_url }})
+- [Exercise: Computer Architecture]({{ '/exercises/01-architecture.md' | relative_url }})
+- [Exercise: Shell Commands]({{ '/exercises/02-shell/02-shell.md' | relative_url }})
+- [Exercise: Detective Story]({{ '/exercises/03-detective_story.md' | relative_url }})
 
 ---
 
@@ -63,21 +64,52 @@ Before we start, please answer these quick polls, it's anonymous:
 ##### 2.3 Practical Workflow
 - Creating and activating environments
 - Installing packages with pip
-- Managing `requirements.txt
+- Managing `requirements.txt`
 - Launching Python scripts from terminal
-
-**Resources:**
-- [Exercises]({{ '/exercises/02-python-env/' | relative_url }}) \| [Solutions]({{ '/solutions/02-python-env/' | relative_url }})
 
 ---
 
-### 3. [Next Topic]({{ '/lessons/03-topic.md' | relative_url }})
-*Coming soon...*
+#### 3. Git Version Control
+**Lesson:** [Git Version Control]({{ '/lessons/03-git-version-control.md' | relative_url }})
+
+##### 3.1 Git Core Concepts
+- Understanding the Git architecture
+- How Git tracks changes
+- The commit: Git's fundamental unit
+
+##### 3.2 Essential Git Workflow
+- Creating and managing repositories
+- Working with branches
+- Merging changes
+- Resolving conflicts
+
+##### 3.3 Collaboration with GitHub/GitLab
+- Pull requests and code reviews
+- Effective commit messages
+- Best practices for team projects
+
+**Resources:**
+- [Exercise: Scrabble Git Exercise]({{ '/exercises/04-scrabble_git_exercice.md' | relative_url }})
+- [Exercise: Pull Requests]({{ '/exercises/05-pull_requests.md' | relative_url }})
+
+---
+
+### Contributing to Course Materials
+You can earn bonus points (0.5 to 1 pt) by making meaningful contributions to our class resources!
+
+**How to contribute:**
+1. Create a pull request with your improvements
+2. Contributions can include:
+   - Exercise solutions
+   - Additional resources
+   - Bug fixes
+   - Documentation improvements
+   - Translations
+
+See the [Pull Requests exercise]({{ '/exercises/05-pull_requests.md' | relative_url }}) for detailed instructions.
 
 ---
 
 ### Quick Links
 - [All Exercises]({{ '/exercises/' | relative_url }})
-- [All Solutions]({{ '/solutions/' | relative_url }})
-- [Course Resources]({{ '/resources/' | relative_url }})
-- [Troubleshooting Guide]({{ '/troubleshooting.md' | relative_url }})
+- [Course Repository](https://github.com/KnuxV/advanced_programming_python)
