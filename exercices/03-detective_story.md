@@ -7,7 +7,13 @@ Your job: Use Git to investigate the story's history and find out what went wron
 
 ## Getting Started
 
-First, copy this instruction file (README) to an answer file so you can fill in your answers:
+Clone the repository in the folder of your choice:
+```bash
+git clone https://gitlab.unistra.fr/cours_git/story_editing_exercise
+cd story_editing_exercise
+```
+
+Then, copy this instruction file (README) to an answer file so you can fill in your answers:
 ```bash
 # INPUT_FILE is the file you want to copy
 # OUPUT_FILE is the name you want to give to the copy
