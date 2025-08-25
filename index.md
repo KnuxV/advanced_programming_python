@@ -20,7 +20,7 @@ Before we start, please answer these quick polls, it's anonymous:
 ### Course Materials
 
 #### 1. Working with a Linux Environment
-**Lesson:** [Linux Environment Setup]({{ '/lessons/01-shell-intro.md' | relative_url }})
+**Lesson:** [Linux Environment Setup]({{ '/lessons/01-shell-intro' | relative_url }})
 
 ##### 1.1 Setting Up Your Development Environment
 - **Windows Subsystem for Linux \(WSL\):** Installation, advantages, and practical usage
@@ -42,14 +42,14 @@ Before we start, please answer these quick polls, it's anonymous:
 - **Quick SQL recap:** Essential queries for data analysis
 
 **Resources:**
-- [Exercise: Computer Architecture]({{ '/exercises/01-architecture.md' | relative_url }})
-- [Exercise: Shell Commands]({{ '/exercises/02-shell/02-shell.md' | relative_url }})
-- [Exercise: Detective Story]({{ '/exercises/03-detective_story.md' | relative_url }})
+- [Exercise: Computer Architecture]({{ '/exercises/01-architecture' | relative_url }})
+- [Exercise: Shell Commands]({{ '/exercises/02-shell/02-shell' | relative_url }})
+- [Exercise: Detective Story]({{ '/exercises/03-detective_story' | relative_url }})
 
 ---
 
 #### 2. Python Environment Management
-**Lesson:** [Python Environment Setup]({{ '/lessons/02-python-env.md' | relative_url }})
+**Lesson:** [Python Environment Setup]({{ '/lessons/02-python-env' | relative_url }})
 
 ##### 2.1 Why Environment Management Matters
 - Dependency conflicts and version hell
@@ -70,7 +70,7 @@ Before we start, please answer these quick polls, it's anonymous:
 ---
 
 #### 3. Git Version Control
-**Lesson:** [Git Version Control]({{ '/lessons/03-git-version-control.md' | relative_url }})
+**Lesson:** [Git Version Control]({{ '/lessons/03-git-version-control' | relative_url }})
 
 ##### 3.1 Git Core Concepts
 - Understanding the Git architecture
@@ -89,8 +89,8 @@ Before we start, please answer these quick polls, it's anonymous:
 - Best practices for team projects
 
 **Resources:**
-- [Exercise: Scrabble Git Exercise]({{ '/exercises/04-scrabble_git_exercice.md' | relative_url }})
-- [Exercise: Pull Requests]({{ '/exercises/05-pull_requests.md' | relative_url }})
+- [Exercise: Scrabble Git Exercise]({{ '/exercises/04-scrabble_git_exercice' | relative_url }})
+- [Exercise: Pull Requests]({{ '/exercises/05-pull_requests' | relative_url }})
 
 ---
 
@@ -106,7 +106,7 @@ You can earn bonus points (0.5 to 1 pt) by making meaningful contributions to ou
    - Documentation improvements
    - Translations
 
-See the [Pull Requests exercise]({{ '/exercises/05-pull_requests.md' | relative_url }}) for detailed instructions.
+See the [Pull Requests exercise]({{ '/exercises/05-pull_requests' | relative_url }}) for detailed instructions.
 
 ---
 
