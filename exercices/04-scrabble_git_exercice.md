@@ -2,7 +2,7 @@
 
 # Git Merge Conflict Exercise: Scrabble Score Calculator
 
-Welcome to your first merge conflict exercise! You'll learn how to work with Git branches and resolve merge conflicts using a simple Scrabble scoring application.
+Exercice with Branches and merge.
 
 ## What You'll Learn
 
@@ -26,14 +26,14 @@ Your job is to merge both features together, which will create a merge conflict 
 
 A **branch** is like a separate timeline for your code. It allows you to work on features independently without affecting the main codebase.
 
-- `main` (or `master`) - The primary branch with stable code
-- `letter-multi` - A branch for developing letter bonus functionality  
+- `main` - The primary branch with stable code
+- `letter-multiplier` - A branch for developing letter bonus functionality  
 - `word-multiplier` - A branch for developing word bonus functionality
 
 Think of it like this:
 ```
-main:           A---B---C
-                     \
+main:           A---B---C -------G
+                     \         /
 feature-branch:       D---E---F
 ```
 
@@ -66,7 +66,7 @@ git branch --show-current
 
 ### Merging Branches
 
-**Merging** combines the changes from one branch into another.
+**Merging** combines the changes from one branch into another. If you want to merge the changes made on a feature branch to your main branch, you must be first switch to the main branch.
 
 ```bash
 git switch main                      # Switch to target branch
@@ -112,7 +112,7 @@ When this happens, Git stops and asks YOU to decide how to resolve the conflict.
 
 ### Step 1: Set Up the Repository
 
-1. Clone or download this repository
+1. Clone or download [this repository](https://gitlab.unistra.fr/cours_git/exercise_scrabble)
 2. Make sure you're on the `main` branch:
    ```bash
    git switch main
@@ -121,9 +121,14 @@ When this happens, Git stops and asks YOU to decide how to resolve the conflict.
 
 ### Step 2: Explore the Feature Branches
 
+**Check the number and names of other branches (features)**
+```bash
+git branch
+```
+
 **Check out the first feature branch:**
 ```bash
-git switch letter-multi
+git switch branch_name
 ```
 - Run the script and see what's different
 - Look at how the `calculate_score()` function changed
@@ -131,7 +136,7 @@ git switch letter-multi
 
 **Check out the second feature branch:**
 ```bash
-git switch word-multiplier
+git switch branch_name
 ```
 - Run this version too
 - Compare the `calculate_score()` function to the letter-multi version
@@ -146,14 +151,14 @@ git switch main
 
 **First merge (this should work smoothly):**
 ```bash
-git merge letter-multi
+git merge one_of_the_two_branch_name
 ```
 - This should succeed without conflicts
 - Test the script to make sure it works
 
 **Second merge (this will create a conflict!):**
 ```bash
-git merge word-multiplier
+git merge the_second_branch_name
 ```
 - Git will stop and tell you there's a conflict
 - Don't panic! This is expected.
