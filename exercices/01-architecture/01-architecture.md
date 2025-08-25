@@ -10,21 +10,9 @@ topics: ["linux", "shell", "project-structure"]
 
 # Exercise 1: Project Architecture
 
-## Learning Objectives
-By the end of this exercise, you will be able to:
-- Set up a proper project folder structure
-- Navigate directories using shell commands
-- Create and organize files for data analysis projects
-- Use basic shell commands for file management
-
-## Prerequisites
-- Completed [Linux Shell Introduction](../lessons/01-shell-intro.md)
-- Access to a terminal (WSL, Mac Terminal, or Linux)
-
----
 
 ## Task Overview
-You have a messy collection of files that need to be organized into a proper project structure. Transform the chaos into a clean, professional economics project layout using shell commands to move, copy, delete, rename, and create new files and folders.
+Create the structure of folder and subfolders to match the target structure below and place the files in their rightful spot. 
 
 ## Starting Files
 You should find these files in your exercise directory:
@@ -67,9 +55,9 @@ economics_project/
 
 3. **Verify your structure**
    ```bash
-   sudo apt install tree # if not install already
+   sudo apt install tree # This will install the command tree if it is not already available
    # Navigate to the root of the economics_project folder
-   tree  # or ls -R if tree isn't available
+   tree 
    ```
 
 ### Part 2: Organize the Files
@@ -92,14 +80,18 @@ economics_project/
 
 9. **Edit the README.md file**
    1. For editing we can use the command nano
+   
    ```bash
-   nano my_file
+   # you can use the already installed text-editor called `nano`
+   # But you will find micro to be just like windows, CTRL+S = save, CTRL+Q = Quit
+   sudo apt install micro 
+   micro my_file
    ```
    2. Add basic project information:
       - Project title and description
    3. Save and exit nano:
-      - `Ctrl+O` to save (write out)
-      - `Ctrl+X` to exit
+      - `Ctrl+S` to save (write out)
+      - `Ctrl+Q` to exit
    4. Verify your README was created:
    ```bash
    cat README.md

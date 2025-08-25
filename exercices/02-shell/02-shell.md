@@ -2,7 +2,7 @@
 
 ## Creating Sample Data
 
-First, let's create a sample CSV file to work with. Copy this data to your clipboard:
+We'll create a simple CSV file to work with. Copy this data to your clipboard:
 
 ```
 Name,City,Age
@@ -11,7 +11,7 @@ Bob,Lyon,30
 Claire,Nice,22
 ```
 
-Now create the file using `echo` and redirect (`>`). **Make sure you're in your home directory or a folder where you want to save the file:**
+Now create the file using `echo` and redirect (`>`). **Make sure you're in a folder where you want to save the file:**
 
 ```bash
 # Check where you are
