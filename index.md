@@ -3,113 +3,139 @@ layout: home
 title: Home
 ---
 
-## Advanced Python Programming
-Welcome to this advanced programming class \(with Python and more\).
+# Advanced Python Programming
 
-### Course Overview
-In this class, we will discover various programming tools and concepts that might be useful to you in the future.
+Welcome to this advanced programming course focusing on Python, development tools, and modern software practices.
 
-### Polling
-Before we start, please answer these quick polls, it's anonymous:
+## Course Overview
 
-1. **Vote on language preference:** [English vs French for this class](https://strawpoll.com/2ayLQXkzvn4)
-2. **Vote on your OS:** [Windows, Mac, Linux, etc.](https://strawpoll.com/w4nWWVrwQnA)
+This course explores essential programming tools and concepts that will enhance your development workflow and prepare you for professional software development.
 
----
-
-### Course Materials
-
-#### 1. Working with a Linux Environment
-**Lesson:** [Linux Environment Setup]({{ '/lessons/01-shell-intro' | relative_url }})
-
-##### 1.1 Setting Up Your Development Environment
-- **Windows Subsystem for Linux \(WSL\):** Installation, advantages, and practical usage
-- **Linux Environment for ChromeOS:** Getting a proper terminal on Chromebooks
-- **Mac Terminal:** Finally use that expensive laptop for more than Netflix
-- **Go Full Linux:** Join the penguin revolution \(for the brave souls\)
-
-##### 1.2 Essential Terminal Commands
-- Navigation and file management \(20\+ essential commands\)
-- Text processing and file manipulation
-- Process management basics
-
-##### 1.3 Package Management
-- **apt** \(Linux environments\) \- Installing and managing software
-- **brew** \(Mac users\) \- The missing package manager for macOS
-
-##### 1.4 Database Fundamentals
-- **SQLite in the terminal:** Installation and basic usage
-- **Quick SQL recap:** Essential queries for data analysis
-
-**Resources:**
-- [Exercise: Computer Architecture]({{ '/exercises/01-architecture' | relative_url }})
-- [Exercise: Shell Commands]({{ '/exercises/02-shell/02-shell' | relative_url }})
-- [Exercise: Detective Story]({{ '/exercises/03-detective_story' | relative_url }})
+### Quick Polls
+Help shape the course by participating in these anonymous polls:
+- 📊 [Language preference: English vs French](https://strawpoll.com/2ayLQXkzvn4)
+- 💻 [Your OS: Windows, Mac, Linux, etc.](https://strawpoll.com/w4nWWVrwQnA)
 
 ---
 
-#### 2. Python Environment Management
-**Lesson:** [Python Environment Setup]({{ '/lessons/02-python-env' | relative_url }})
+## Course Modules
 
-##### 2.1 Why Environment Management Matters
-- Dependency conflicts and version hell
-- Reproducible research environments
-- Project isolation best practices
+### Module 1: Linux Environment & Shell
+**📚 [Lesson: Shell Introduction]({{ '/lessons/01-shell-intro.md' | relative_url }})**
 
-##### 2.2 Environment Tools Comparison
-- **venv:** Python's built\-in solution \(simple and reliable\)
-- **conda:** The data science favorite \(great for scientific packages\)
-- **uv:** The new fast kid on the block \(modern Python tooling\)
+#### Topics Covered:
+- **Development Environment Setup**
+    - Windows Subsystem for Linux (WSL): Installation and configuration
+    - Linux on ChromeOS: Terminal access for Chromebooks
+    - macOS Terminal: Leveraging Unix capabilities
+    - Native Linux: Full installation guide
 
-##### 2.3 Practical Workflow
-- Creating and activating environments
-- Installing packages with pip
-- Managing `requirements.txt`
-- Launching Python scripts from terminal
+- **Essential Terminal Skills**
+    - File system navigation and management
+    - Text processing with grep, sed, awk
+    - Process monitoring and control
+    - Shell scripting basics
 
----
+- **Package Management**
+    - apt/apt-get for Debian-based systems
+    - Homebrew for macOS
+    - Package installation best practices
 
-#### 3. Git Version Control
-**Lesson:** [Git Version Control]({{ '/lessons/03-git-version-control' | relative_url }})
+- **Database Fundamentals**
+    - SQLite command-line interface
+    - Essential SQL queries for data manipulation
 
-##### 3.1 Git Core Concepts
-- Understanding the Git architecture
-- How Git tracks changes
-- The commit: Git's fundamental unit
-
-##### 3.2 Essential Git Workflow
-- Creating and managing repositories
-- Working with branches
-- Merging changes
-- Resolving conflicts
-
-##### 3.3 Collaboration with GitHub/GitLab
-- Pull requests and code reviews
-- Effective commit messages
-- Best practices for team projects
-
-**Resources:**
-- [Exercise: Scrabble Git Exercise]({{ '/exercises/04-scrabble_git_exercice' | relative_url }})
-- [Exercise: Pull Requests]({{ '/exercises/05-pull_requests' | relative_url }})
+#### Practice Exercises:
+- [Computer Architecture Basics]({{ '/exercises/01-architecture.md' | relative_url }})
+- [Shell Commands Practice]({{ '/exercises/02-shell.md' | relative_url }})
+- [Detective Story: Shell Investigation]({{ '/exercises/03-detective_story.md' | relative_url }})
 
 ---
 
-### Contributing to Course Materials
-You can earn bonus points (0.5 to 1 pt) by making meaningful contributions to our class resources!
+### Module 2: Python Environment Management
+**📚 [Lesson: Python Environment Setup]({{ '/lessons/02-python-env.md' | relative_url }})**
 
-**How to contribute:**
-1. Create a pull request with your improvements
-2. Contributions can include:
-   - Exercise solutions
-   - Additional resources
-   - Bug fixes
-   - Documentation improvements
-   - Translations
+#### Topics Covered:
+- **Why Virtual Environments Matter**
+    - Avoiding dependency conflicts
+    - Ensuring reproducibility
+    - Project isolation strategies
 
-See the [Pull Requests exercise]({{ '/exercises/05-pull_requests' | relative_url }}) for detailed instructions.
+- **Environment Management Tools**
+    - **venv**: Python's standard solution
+    - **conda**: Scientific computing powerhouse
+    - **uv**: Modern, fast Python tooling
+
+- **Practical Workflows**
+    - Creating and activating virtual environments
+    - Managing dependencies with pip
+    - Requirements files and dependency pinning
+    - Running Python scripts from the terminal
 
 ---
 
-### Quick Links
-- [All Exercises]({{ '/exercises/' | relative_url }})
-- [Course Repository](https://github.com/KnuxV/advanced_programming_python)
+### Module 3: Version Control with Git
+**📚 [Lesson: Git Version Control]({{ '/lessons/03-git-version-control.md' | relative_url }})**
+
+#### Topics Covered:
+- **Git Fundamentals**
+    - Understanding Git's architecture
+    - Tracking changes effectively
+    - The anatomy of a commit
+
+- **Core Git Workflow**
+    - Repository initialization and cloning
+    - Branching strategies
+    - Merging and rebasing
+    - Conflict resolution techniques
+
+- **Collaborative Development**
+    - Working with GitHub/GitLab
+    - Pull requests and code reviews
+    - Writing meaningful commit messages
+    - Team collaboration best practices
+
+#### Practice Exercises:
+- [Scrabble: Git Merge Exercise]({{ '/exercises/04-scrabble_git_exercise.md' | relative_url }})
+- [Pull Requests Workshop]({{ '/exercises/05-pull_requests.md' | relative_url }})
+
+---
+
+## Contributing to the Course
+
+### Earn Bonus Points! 🌟
+Contribute to our course materials and earn 0.5-1 bonus points on your final grade.
+
+**Ways to Contribute:**
+- Submit exercise solutions
+- Add helpful resources or tutorials
+- Fix bugs or typos
+- Improve documentation
+- Translate content
+
+**How to Submit:**
+1. Fork the repository
+2. Make your improvements
+3. Submit a pull request
+4. See the [Pull Requests exercise]({{ '/exercises/05-pull_requests.md' | relative_url }}) for detailed instructions
+
+---
+
+## Quick Navigation
+
+### 📖 All Lessons
+- [Shell Introduction]({{ '/lessons/01-shell-intro.md' | relative_url }})
+- [Python Environment]({{ '/lessons/02-python-env.md' | relative_url }})
+- [Git Version Control]({{ '/lessons/03-git-version-control.md' | relative_url }})
+
+### 💪 All Exercises
+- [Computer Architecture]({{ '/exercises/01-architecture.md' | relative_url }})
+- [Shell Commands]({{ '/exercises/02-shell.md' | relative_url }})
+- [Detective Story]({{ '/exercises/03-detective_story.md' | relative_url }})
+- [Git Scrabble]({{ '/exercises/04-scrabble_git_exercise.md' | relative_url }})
+- [Pull Requests]({{ '/exercises/05-pull_requests.md' | relative_url }})
+
+### 🔗 External Resources
+- [Course Repository on GitHub](https://github.com/KnuxV/advanced_programming_python)
+- [Python Official Documentation](https://docs.python.org/)
+- [Git Documentation](https://git-scm.com/doc)
