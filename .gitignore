@@ -9,3 +9,9 @@ Gemfile.lock
 *.swp
 *.swo
 *~
+.idea/
+_site/
+.sass-cache/
+.jekyll-cache/
+.bundle/
+vendor/

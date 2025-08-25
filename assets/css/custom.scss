@@ -1,0 +1,43 @@
+---
+---
+
+.hero {
+  padding: 2.5rem 1.25rem;
+  background: linear-gradient(135deg, #2b90d9 0%, #1b6ca8 100%);
+  color: #fff;
+  border-radius: 12px;
+  margin: 1rem 0 2rem;
+}
+.hero h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+}
+.hero .subtitle {
+  margin: 0 0 1rem 0;
+  opacity: 0.9;
+}
+.hero .hero-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  background: #fff;
+  color: #0a4a70;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid rgba(255,255,255,0.85);
+}
+.btn:hover { background: #f3f7fb; }
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+}
+
+.content h2, .content h3 {
+  margin-top: 1.5rem;
+}
+.content ul { margin-left: 1.2rem; }

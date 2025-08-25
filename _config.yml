@@ -10,3 +10,12 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+minima:
+  skin: auto
+  social_links:
+    github: KnuxV
+
+# Optional: show selected pages in the header nav
+header_pages:
+  - index.md
