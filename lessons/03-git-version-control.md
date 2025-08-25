@@ -91,7 +91,7 @@ git config --global user.email "your.email@example.com"
 git config --global init.defaultBranch main
 
 # Set your preferred text editor
-git config --global core.editor "nano"
+git config --global core.editor "micro"
 
 # View your configuration
 git config --list
@@ -405,7 +405,7 @@ When a conflict occurs, Git modifies the affected files to show both versions:
 git status
 
 # Edit the file to resolve conflicts
-nano conflicted_file.py
+micro conflicted_file.py
 
 # After editing, mark as resolved
 git add conflicted_file.py
