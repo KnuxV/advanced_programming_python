@@ -88,6 +88,35 @@ Program |   Option Message      Flag
      Subcommand
 ```
 
+## Command-Line Argument Types
+
+Before diving into implementation details, let's clarify the different types of command-line arguments:
+
+```bash
+python script.py input.txt -v --output result.txt --format json
+                    ↑      ↑      ↑       ↑         ↑       ↑
+                positional flag  option  value    option  value
+```
+
+**Dash conventions:**
+- **Single dash** (`-v`, `-o`): Short form, typically one letter
+- **Double dash** (`--verbose`, `--output`): Long form, full words for readability
+- Most arguments support both: `-v` and `--verbose` do the same thing
+
+**Argument types:**
+- **Flags** (`-v`, `--verbose`): Boolean switches that are either present or absent
+- **Options** (`-o file.txt`, `--output file.txt`): Take values and modify behavior
+
+Both flags and options can use single or double dashes, but options require additional values while flags don't.
+
+**Common flag conventions:**
+- `-v`, `--verbose`: Enable detailed output
+- `-q`, `--quiet`: Suppress output  
+- `-f`, `--force`: Skip confirmations
+- `-h`, `--help`: Show help message
+- `-n`, `--dry-run`: Show what would happen without doing it
+- `-r`, `--recursive`: Process directories recursively
+
 ---
 
 ## Understanding sys.argv
