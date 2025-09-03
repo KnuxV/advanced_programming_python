@@ -119,7 +119,7 @@ Implement a clean `__repr__` that shows the most important country information o
 Calculate the distance between two countries' capitals using the **Haversine formula** ([implementation here for example](https://www.geeksforgeeks.org/dsa/haversine-formula-to-find-distance-between-two-points-on-a-sphere/)):
 
 ```python
-def capital_distance(self, other_country: 'Country'):
+def capital_distance(self, other_country: Country):
    """Calculate distance between capitals in kilometers"""
    # self = this country, other_country = the country to compare with
    # Use self.capital_lat, self.capital_lon and other_country.capital_lat, other_country.capital_lon
