@@ -1,0 +1,2 @@
+-- Écrivez une requête SQL pour trouver les titres des épisodes diffusés pendant la période des fêtes,
+-- généralement en décembre aux États-Unis.

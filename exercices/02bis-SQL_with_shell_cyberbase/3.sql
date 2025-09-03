@@ -1,0 +1,2 @@
+--Dans 3.sql,
+-- trouvez le code de production de l'épisode « Hackerized! ».

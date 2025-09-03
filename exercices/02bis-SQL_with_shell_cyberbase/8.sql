@@ -1,0 +1,2 @@
+-- Dans 8.sql, écrivez une requête qui compte
+-- le nombre d'épisodes publiés au cours des 6 dernières années, de 2018 à 2023 inclus.

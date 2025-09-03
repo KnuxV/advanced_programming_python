@@ -2,7 +2,7 @@
 # Git Merge Conflict Exercise: Scrabble Score Calculator
 
 Exercice with Branches and merge.
-##  The exercice is available on my GITLAB: https://gitlab.unistra.fr/cours_git/exercise_scrabble
+###  The exercice is available here: https://gitlab.unistra.fr/cours_git/exercise_scrabble
 
 ## What You'll Learn
 
