@@ -10,19 +10,42 @@ SEP = " "  # Separator between words
 # Alternative: you could use os.getcwd() or pathlib.Path.cwd()
 WORDS_PATH = Path(".") / "data" / "wordlist.txt"
 
-# Load word list from file
-with open(WORDS_PATH, "r", encoding="utf-8") as f:
-    lst_words = [w.strip() for w in f.readlines()]
 
-print(f"Loaded {len(lst_words)} words")
-print("First 5 words:", lst_words[:5])
+def generate_password(num_words=N, separator=SEP):
+    """Generate a password using random words from the word list.
 
-# Generate password by randomly sampling words without replacement
-# random.sample() ensures each word appears only once in the password
-result = random.sample(lst_words, k=N)
+    Args:
+        num_words (int): Number of words to include in the password
+        separator (str): String to use between words
 
-if __name__ == '__main__':
+    Returns:
+        str: The generated password
+    """
+    # Load word list from file
+    with open(WORDS_PATH, "r", encoding="utf-8") as f:
+        lst_words = [w.strip() for w in f.readlines()]
 
-# Join words with separator
-password = SEP.join(result)
-print(f"Generated password: {password}")
+    # Generate password by randomly sampling words without replacement
+    # random.sample() ensures each word appears only once in the password
+    result = random.sample(lst_words, k=num_words)
+
+    # Join words with separator
+    return separator.join(result)
+
+
+def main():
+    """Main function - generates and prints a password with default settings."""
+    password = generate_password()
+    print(f"Generated password: {password}")
+
+
+if __name__ == "__main__":
+    # Load word list to show basic info
+    with open(WORDS_PATH, "r", encoding="utf-8") as f:
+        lst_words = [w.strip() for w in f.readlines()]
+
+    print(f"Loaded {len(lst_words)} words")
+    print("First 5 words:", lst_words[:5])
+
+    # Generate and display password
+    main()
