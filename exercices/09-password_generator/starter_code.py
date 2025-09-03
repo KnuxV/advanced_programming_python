@@ -33,12 +33,6 @@ def generate_password(num_words=N, separator=SEP):
     return separator.join(result)
 
 
-def main():
-    """Main function - generates and prints a password with default settings."""
-    password = generate_password()
-    print(f"Generated password: {password}")
-
-
 if __name__ == "__main__":
     # Load word list to show basic info
     with open(WORDS_PATH, "r", encoding="utf-8") as f:
@@ -48,4 +42,5 @@ if __name__ == "__main__":
     print("First 5 words:", lst_words[:5])
 
     # Generate and display password
-    main()
+    password = generate_password(num_words=N, separator=" ")
+    print(password)
