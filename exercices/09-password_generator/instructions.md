@@ -110,10 +110,11 @@ python password_gen_argv.py 6
 
 ## Part 2: Using argparse
 
-Create `password_gen_argparse.py` by copying the starter code and replacing the `main()` function to use the `argparse` module for much more sophisticated options.
+Create `password_gen_argparse.py` by copying (use cp) the starter code and replacing the `main()` function to use the `argparse` module for much more sophisticated options.
 
 ### Requirements
 
+You can add the `parser = argparse.ArgumentParser(description='My awesome program')` directly in the `__main__`
 Your script should support this usage:
 
 ```bash

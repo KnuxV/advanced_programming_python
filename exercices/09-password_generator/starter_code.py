@@ -6,9 +6,9 @@ N = 5  # Number of words in the password
 SEP = " "  # Separator between words
 
 # Path to word list file
-# Path(".") gets the current directory, .parent goes up one level
-# Alternative: you could use os.getcwd() or pathlib.Path.cwd()
-WORDS_PATH = Path(".") / "data" / "wordlist.txt"
+# Path(__file__).parent represents the path of the file we are working with
+# Even if we execute the script from somewhere else, for ex. the root of the projects this will work.
+WORDS_PATH = Path(__file__).parent / "data" / "wordlist.txt"
 
 
 def generate_password(num_words=N, separator=SEP):
