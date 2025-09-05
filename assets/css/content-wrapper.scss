@@ -4,7 +4,7 @@
 .content-wrapper {
   display: flex;
   gap: 2rem;
-  max-width: 1600px; /* Much wider */
+  max-width: 1200px; /* Much wider */
   margin: 0 auto;
   padding: 1.5rem;
 }
@@ -17,7 +17,7 @@
 /* Make content even wider on very large screens */
 @media (min-width: 1200px) {
   .content-wrapper {
-    max-width: 1600px;
+    max-width: 1300px;
     gap: 3rem;
   }
 
@@ -29,7 +29,7 @@
 
 @media (min-width: 1400px) {
   .content-wrapper {
-    max-width: 1800px; /* Maximum width for ultra-wide screens */
+    max-width: 1400px; /* Maximum width for ultra-wide screens */
   }
 }
 

@@ -1,9 +1,9 @@
 title: Advanced Python Programming
-description: Kevin Michoud & Pierre Pelletier
+description: September 2025
 baseurl: "/advanced_programming_python"
 url: "https://knuxv.github.io"
 author:
-  name: Kevin Michoud
+  Kevin Michoud & Pierre Pelletier
 
 markdown: kramdown
 highlighter: rouge
