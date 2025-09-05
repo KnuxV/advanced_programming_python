@@ -150,3 +150,81 @@
     padding: 0.25rem 0.4rem;
   }
 }
+/* Add these improvements to your existing sidebar.scss */
+
+/* Fix the content wrapper to be wider for large screens */
+.content-wrapper {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px; /* Increased from smaller default */
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0; /* Important for flex overflow handling */
+  max-width: none; /* Remove any width restrictions */
+}
+
+/* Better responsive breakpoints for content width */
+@media (min-width: 1200px) {
+  .content-wrapper {
+    max-width: 1600px; /* Even wider for very large screens */
+    gap: 3rem;
+  }
+
+  .page-sidebar {
+    width: 280px; /* Slightly wider sidebar on large screens */
+  }
+}
+
+@media (min-width: 1400px) {
+  .content-wrapper {
+    max-width: 1800px; /* Maximum width for ultra-wide screens */
+  }
+}
+
+/* Ensure the sidebar appears on lesson pages - add this class matching logic */
+.page-sidebar {
+  width: 220px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+
+/* Fix the collapsible functionality - make sure icons change properly */
+.collapsible-header.open {
+  background: #dee2e6;
+}
+
+.collapsible-header.open .toggle-icon {
+  transform: rotate(45deg);
+}
+
+/* Improve content spacing in lessons */
+.lesson-content,
+.main-content > article {
+  width: 100%;
+  max-width: none;
+}
+
+/* Better responsive behavior */
+@media (max-width: 992px) {
+  .content-wrapper {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .page-sidebar {
+    width: 100%;
+    position: static;
+    margin-top: 2rem;
+    order: 2; /* Put sidebar after content on mobile */
+  }
+}

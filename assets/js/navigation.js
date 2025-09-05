@@ -20,15 +20,15 @@ function toggleSection(sectionId) {
   if (!content) return;
 
   const header = content.previousElementSibling;
-  const icon = header.querySelector('.toggle-icon');
+  const icon = header ? header.querySelector('.toggle-icon') : null;
 
   if (content.classList.contains('open')) {
     content.classList.remove('open');
-    header.classList.remove('open');
+    if (header) header.classList.remove('open');
     if (icon) icon.textContent = '+';
   } else {
     content.classList.add('open');
-    header.classList.add('open');
+    if (header) header.classList.add('open');
     if (icon) icon.textContent = '−';
   }
 }
@@ -43,11 +43,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (content) {
       content.classList.add('open');
       const header = content.previousElementSibling;
-      if (header) {
+      if (header && header.classList.contains('collapsible-header')) {
         header.classList.add('open');
         const icon = header.querySelector('.toggle-icon');
         if (icon) icon.textContent = '−';
       }
     }
   });
+
+  // For lesson pages, auto-expand the lessons section by default if it exists
+  const lessonsSection = document.getElementById('lessons-section');
+  if (lessonsSection && !lessonsSection.classList.contains('open')) {
+    lessonsSection.classList.add('open');
+    const header = lessonsSection.previousElementSibling;
+    if (header && header.classList.contains('collapsible-header')) {
+      header.classList.add('open');
+      const icon = header.querySelector('.toggle-icon');
+      if (icon) icon.textContent = '−';
+    }
+  }
 });

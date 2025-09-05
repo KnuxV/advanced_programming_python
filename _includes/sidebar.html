@@ -47,17 +47,14 @@
 
   <!-- Lesson/Exercise pages: Show current class content -->
   {% else %}
-    {% comment %} Find which class this page belongs to by checking the URL path {% endcomment %}
+    {% comment %} Find which class this page belongs to {% endcomment %}
     {% assign current_class = null %}
     {% assign page_url = page.url | remove: '.html' %}
-    {% assign page_path_check = page.path | remove: '.md' | remove: '.html' %}
 
     {% for class in site.data.navigation.classes %}
       {% comment %} Check lessons {% endcomment %}
       {% for lesson in class.lessons %}
-        {% assign lesson_path_check = lesson.path | remove: '/' %}
-        {% assign page_path_simple = page_path_check | remove: 'lessons/' %}
-        {% if lesson.path == page_url or lesson_path_check == page_path_simple or lesson.path contains page.slug %}
+        {% if lesson.path == page_url or page_url contains lesson.path %}
           {% assign current_class = class %}
           {% break %}
         {% endif %}
@@ -66,9 +63,7 @@
 
       {% comment %} Check exercises {% endcomment %}
       {% for exercise in class.exercises %}
-        {% assign exercise_path_check = exercise.path | remove: '/' %}
-        {% assign page_path_simple = page_path_check | remove: 'exercices/' %}
-        {% if exercise.path == page_url or exercise_path_check == page_path_simple or exercise.path contains page.slug %}
+        {% if exercise.path == page_url or page_url contains exercise.path %}
           {% assign current_class = class %}
           {% break %}
         {% endif %}
@@ -78,8 +73,7 @@
       {% comment %} Check code examples {% endcomment %}
       {% if class.code_examples %}
         {% for example in class.code_examples %}
-          {% assign example_path_check = example.path | remove: '/' %}
-          {% if example.path == page_url or example_path_check contains page.slug %}
+          {% if example.path == page_url or page_url contains example.path %}
             {% assign current_class = class %}
             {% break %}
           {% endif %}
@@ -88,7 +82,7 @@
       {% if current_class %}{% break %}{% endif %}
     {% endfor %}
 
-    {% comment %} Fallback: If still no match, try to find by class_number variable {% endcomment %}
+    {% comment %} Fallback: Try to find by class_number variable {% endcomment %}
     {% unless current_class %}
       {% if page.class_number %}
         {% for class in site.data.navigation.classes %}
@@ -113,7 +107,7 @@
               <ul class="sidebar-list">
                 {% for lesson in current_class.lessons %}
                   {% assign is_current = false %}
-                  {% if lesson.path == page_url or lesson.path contains page.slug %}
+                  {% if lesson.path == page_url or page_url contains lesson.path %}
                     {% assign is_current = true %}
                   {% endif %}
                   <li class="{% if is_current %}current{% endif %}">
@@ -135,7 +129,7 @@
               <ul class="sidebar-list">
                 {% for example in current_class.code_examples %}
                   {% assign is_current = false %}
-                  {% if example.path == page_url %}
+                  {% if example.path == page_url or page_url contains example.path %}
                     {% assign is_current = true %}
                   {% endif %}
                   <li class="{% if is_current %}current{% endif %}">
@@ -157,7 +151,7 @@
               <ul class="sidebar-list">
                 {% for exercise in current_class.exercises %}
                   {% assign is_current = false %}
-                  {% if exercise.path == page_url or exercise.path contains page.slug %}
+                  {% if exercise.path == page_url or page_url contains exercise.path %}
                     {% assign is_current = true %}
                   {% endif %}
                   <li class="{% if is_current %}current{% endif %}">
