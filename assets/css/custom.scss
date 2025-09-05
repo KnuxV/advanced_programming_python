@@ -11,10 +11,10 @@
 
 .course-classes {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;  /* Changed from space-evenly */
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
+  flex-wrap: wrap;  /* Changed from nowrap */
+  gap: 0.1rem;
 }
 
 .class-link {
