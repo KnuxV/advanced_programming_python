@@ -2,21 +2,40 @@
 layout: default
 ---
 
-<section class="hero">
-  <h1>{{ page.title | default: site.title }}</h1>
-  {%- if site.description -%}
-  <p class="subtitle">{{ site.description }}</p>
-  {%- endif -%}
-</section>
+<div class="content-wrapper">
+  <div class="main-content">
+    <section class="hero">
+      <h1>{{ page.title | default: site.title }}</h1>
+      {%- if site.description -%}
+      <p class="subtitle">{{ site.description }}</p>
+      {%- endif -%}
+    </section>
 
-<section class="content">
-  {{ content }}
-</section>
+    <section class="content">
+      {{ content }}
+    </section>
+  </div>
+
+  {%- include sidebar.html -%}
+</div>
 
 <!-- Back to top button -->
 <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
 <style>
+  /* Content wrapper with sidebar */
+  .content-wrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .main-content {
+    flex: 1;
+    min-width: 0; /* Prevents flex item from overflowing */
+  }
+
   /* Hero section */
   .hero {
     text-align: center;
@@ -64,6 +83,12 @@ layout: default
   .back-to-top:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(102,126,234,0.4);
+  }
+
+  @media (max-width: 992px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
   }
 
   @media (max-width: 768px) {

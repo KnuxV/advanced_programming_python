@@ -2,46 +2,64 @@
 layout: default
 ---
 
-<article class="lesson-content">
-  <header class="lesson-header">
-    {% if page.title %}
-    <h1>{{ page.title }}</h1>
-    {% endif %}
+<div class="content-wrapper">
+  <div class="main-content">
+    <article class="lesson-content">
+      <header class="lesson-header">
+        {% if page.title %}
+        <h1>{{ page.title }}</h1>
+        {% endif %}
 
-    <!-- Breadcrumb navigation -->
-    <nav class="breadcrumb">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      {% if page.path contains 'lessons' %}
-        → <span>Lessons</span>
-      {% elsif page.path contains 'exercices' %}
-        → <span>Exercises</span>
-      {% endif %}
-      {% if page.title %}
-        → <span>{{ page.title }}</span>
-      {% endif %}
-    </nav>
-  </header>
+        <!-- Breadcrumb navigation -->
+        <nav class="breadcrumb">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          {% if page.path contains 'lessons' %}
+            → <span>Lessons</span>
+          {% elsif page.path contains 'exercices' %}
+            → <span>Exercises</span>
+          {% endif %}
+          {% if page.title %}
+            → <span>{{ page.title }}</span>
+          {% endif %}
+        </nav>
+      </header>
 
-  <div class="lesson-body">
-    {{ content }}
+      <div class="lesson-body">
+        {{ content }}
+      </div>
+
+      <!-- Navigation to next/previous lessons -->
+      <footer class="lesson-navigation">
+        <div class="nav-links">
+          <a href="{{ '/' | relative_url }}" class="btn btn-outline">← Back to Course</a>
+          {% if page.path contains 'exercices' %}
+            <a href="{{ '/#class-' | append: page.class_number | relative_url }}" class="btn btn-primary">View Class {{ page.class_number }}</a>
+          {% endif %}
+        </div>
+      </footer>
+    </article>
   </div>
 
-  <!-- Navigation to next/previous lessons -->
-  <footer class="lesson-navigation">
-    <div class="nav-links">
-      <a href="{{ '/' | relative_url }}" class="btn btn-outline">← Back to Course</a>
-      {% if page.path contains 'exercices' %}
-        <a href="{{ '/#class-' | append: page.class_number | relative_url }}" class="btn btn-primary">View Class {{ page.class_number }}</a>
-      {% endif %}
-    </div>
-  </footer>
-</article>
+  {%- include sidebar.html -%}
+</div>
 
 <style>
-  .lesson-content {
-    max-width: 800px;
+  /* Content wrapper with sidebar */
+  .content-wrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem;
+  }
+
+  .main-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .lesson-content {
+    max-width: none; /* Remove the 800px limit to use flex space */
   }
 
   .lesson-header {
@@ -127,6 +145,12 @@ layout: default
   .btn-primary:hover {
     background: #0056b3;
     border-color: #0056b3;
+  }
+
+  @media (max-width: 992px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
   }
 
   @media (max-width: 768px) {
