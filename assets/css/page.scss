@@ -1,21 +1,6 @@
 ---
 ---
 
-/* Content wrapper with sidebar */
-.content-wrapper {
-  display: flex;
-  gap: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.main-content {
-  max-width: 1000px; /* Add max-width for optimal reading */
-  flex: 1;
-  min-width: 0;
-}
-
 .lesson-content {
   max-width: none; /* Remove the 800px limit to use flex space */
 }

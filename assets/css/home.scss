@@ -2,18 +2,6 @@
 ---
 
 /* Content wrapper with sidebar */
-.content-wrapper {
-  display: flex;
-  gap: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.main-content {
-  max-width: 1000px; /* Add max-width for optimal reading */
-  flex: 1;
-  min-width: 0; /* Prevents flex item from overflowing */
-}
 
 /* Hero section */
 .hero {

@@ -1,21 +1,19 @@
 ---
 ---
 
-/* Wider content layouts for large screens */
 .content-wrapper {
   display: flex;
   gap: 2rem;
-  max-width: 1400px; /* Much wider than typical 1200px */
+  max-width: 1600px; /* Much wider */
   margin: 0 auto;
   padding: 1.5rem;
 }
 
 .main-content {
   flex: 1;
-  min-width: 0; /* Important for flex overflow handling */
-  max-width: none; /* Remove any width restrictions */
+  min-width: 0;
+  max-width: none; /* Let it take all available space */
 }
-
 /* Make content even wider on very large screens */
 @media (min-width: 1200px) {
   .content-wrapper {
