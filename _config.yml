@@ -19,3 +19,21 @@ minima:
 # Optional: show selected pages in the header nav
 header_pages:
   - index.md
+
+# Force all pages to use our custom default layout
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "lessons"
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "exercices"
+      type: "pages"
+    values:
+      layout: "default"

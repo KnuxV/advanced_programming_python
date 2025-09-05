@@ -1,212 +1,99 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  {%- include head.html -%}
-  <body class="{{ page.layout }}">
-    {%- include header.html -%}
+---
+layout: default
+---
 
-    <!-- Dynamic Global Course Navigation Header -->
-    <section class="global-course-nav">
-      <div class="wrapper">
-        <div class="course-classes">
-          {% for class in site.data.navigation.classes %}
-          <a href="{{ '/#' | append: class.id | relative_url }}" class="class-link">
-            <span class="class-number">Class {{ class.number }}</span>
-            <span class="class-title">{{ class.title }}</span>
-          </a>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
+<section class="hero">
+  <h1>{{ page.title | default: site.title }}</h1>
+  {%- if site.description -%}
+  <p class="subtitle">{{ site.description }}</p>
+  {%- endif -%}
+</section>
 
-    <!-- Dynamic Global Floating Navigation -->
-    <nav class="global-floating-nav" id="globalFloatingNav">
-      <button class="nav-toggle" onclick="toggleGlobalNav()">≡</button>
-      <div class="nav-items">
-        <a href="{{ '/' | relative_url }}">🏠 Home</a>
-        {% for class in site.data.navigation.classes %}
-        <a href="{{ '/#' | append: class.id | relative_url }}">Class {{ class.number }}: {{ class.title | truncate: 15 }}</a>
-        {% endfor %}
-        <a href="{{ '/#contributing' | relative_url }}">Contributing</a>
-      </div>
-    </nav>
+<section class="content">
+  {{ content }}
+</section>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
-    {%- include footer.html -%}
+<style>
+  /* Hero section */
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    margin-bottom: 3rem;
+  }
 
-    <!-- Global Navigation Styles -->
-    <style>
-      /* Global Course Navigation Header */
-      .global-course-nav {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 1rem 0;
-        margin-bottom: 2rem;
-      }
+  .hero h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    color: #2c3e50;
+  }
 
-      .course-classes {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
+  .subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin: 0;
+  }
 
-      .class-link {
-        text-decoration: none;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        min-width: 120px;
-        text-align: center;
-        flex: 1;
-        max-width: 200px;
-      }
+  /* Back to top button */
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(102,126,234,0.3);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
 
-      .class-link:hover {
-        background: rgba(255,255,255,0.2);
-        transform: translateY(-2px);
-      }
+  .back-to-top.visible {
+    opacity: 1;
+  }
 
-      .class-number {
-        font-weight: bold;
-        font-size: 1rem;
-        margin-bottom: 0.25rem;
-      }
+  .back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102,126,234,0.4);
+  }
 
-      .class-title {
-        font-size: 0.8rem;
-        opacity: 0.9;
-        line-height: 1.2;
-      }
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
 
-      /* Global Floating Navigation */
-      .global-floating-nav {
-        position: fixed;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 1000;
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
+<script>
+  // Back to top functionality
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-      .global-floating-nav .nav-toggle {
-        background: #667eea;
-        color: white;
-        border: none;
-        padding: 12px 16px;
-        cursor: pointer;
-        font-size: 18px;
-        width: 100%;
-      }
+  // Show/hide back to top button
+  window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop && window.pageYOffset > 300) {
+      backToTop.classList.add('visible');
+    } else if (backToTop) {
+      backToTop.classList.remove('visible');
+    }
+  });
 
-      .global-floating-nav .nav-items {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-
-      .global-floating-nav.open .nav-items {
-        max-height: 400px;
-      }
-
-      .global-floating-nav .nav-items a {
-        display: block;
-        padding: 12px 16px;
-        text-decoration: none;
-        color: #495057;
-        border-bottom: 1px solid #e9ecef;
-        transition: background 0.2s ease;
-        white-space: nowrap;
-      }
-
-      .global-floating-nav .nav-items a:hover {
-        background: #f8f9fa;
-        color: #667eea;
-      }
-
-      /* Auto-scaling for different numbers of classes */
-      @media (max-width: 1200px) {
-        .course-classes {
-          justify-content: center;
-        }
-      }
-
-      /* Mobile responsiveness */
-      @media (max-width: 768px) {
-        .class-link {
-          min-width: 100px;
-          flex: none;
-        }
-
-        .class-number {
-          font-size: 0.9rem;
-        }
-
-        .class-title {
-          font-size: 0.7rem;
-        }
-
-        .global-floating-nav {
-          position: relative;
-          right: auto;
-          top: auto;
-          transform: none;
-          margin: 1rem;
-        }
-
-        .global-floating-nav .nav-items {
-          max-height: none;
-        }
-      }
-
-      /* Dark mode support */
-      @media (prefers-color-scheme: dark) {
-        .global-floating-nav {
-          background: #2d3748;
-        }
-
-        .global-floating-nav .nav-items a {
-          color: #e2e8f0;
-          border-color: #4a5568;
-        }
-
-        .global-floating-nav .nav-items a:hover {
-          background: #4a5568;
-          color: #90cdf4;
-        }
-      }
-    </style>
-
-    <!-- Global Navigation JavaScript -->
-    <script>
-      // Global floating navigation toggle
-      function toggleGlobalNav() {
-        const nav = document.getElementById('globalFloatingNav');
-        nav.classList.toggle('open');
-      }
-
-      // Close global nav when clicking outside
-      document.addEventListener('click', function(e) {
-        const nav = document.getElementById('globalFloatingNav');
-        if (!nav.contains(e.target)) {
-          nav.classList.remove('open');
-        }
-      });
-    </script>
-
-    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-  </body>
-</html>
+  // Smooth scroll to sections (for home page)
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
