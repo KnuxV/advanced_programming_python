@@ -1,3 +1,8 @@
+---
+layout: page
+title: Packages (bis)
+class_number: 6
+---
 
 ### Installing Your Package Locally
 

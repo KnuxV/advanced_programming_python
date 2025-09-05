@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Git Version Control
+class_number: 3
 ---
+
 
 # Git Version Control: From GUI to Command Line
 

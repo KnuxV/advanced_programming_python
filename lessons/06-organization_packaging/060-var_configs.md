@@ -1,3 +1,9 @@
+---
+layout: page
+title: Environment Variables
+class_number: 6
+---
+
 # Environment Variables and Configuration
 
 ## Why Do We Need This?

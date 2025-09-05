@@ -1,3 +1,9 @@
+---
+layout: page
+title: Packages
+class_number: 6
+---
+
 ## Working with Packages
 
 ### What is a Package?

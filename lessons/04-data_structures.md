@@ -1,3 +1,9 @@
+---
+layout: page
+title: Data Structures
+class_number: 4
+---
+
 # Python Data Structures & Programming Paradigms
 
 ## Introduction: Why Data Structure Choice Matters

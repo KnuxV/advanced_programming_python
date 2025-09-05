@@ -1,3 +1,9 @@
+---
+layout: page
+title: Databases with Polars
+class_number: 5
+---
+
 # Polars vs Pandas: Modern DataFrames in Python
 
 ## Quick Pandas Refresher (5 min)

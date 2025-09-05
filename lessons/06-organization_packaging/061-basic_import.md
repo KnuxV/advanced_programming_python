@@ -1,16 +1,12 @@
+---
+layout: page
+title: Python Organization
+class_number: 6
+---
+
 # Python Organization and Packaging: Complete Class Guide
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Module vs Script vs Library](#module-vs-script-vs-library)
-3. [The Python Import System](#the-python-import-system)
-4. [Working with Packages](#working-with-packages)
-5. [Creating Your Own Package](#creating-your-own-package)
-6. [Publishing to PyPI](#publishing-to-pypi)
-7. [Hands-On Exercises](#hands-on-exercises)
-8. [Quick Reference](#quick-reference)
 
----
 
 ## Introduction
 

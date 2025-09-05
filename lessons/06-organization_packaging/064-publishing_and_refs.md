@@ -1,5 +1,9 @@
-
 ---
+layout: page
+title: PyPI
+class_number: 6
+---
+
 
 ## Publishing to PyPI: Theory and Concepts
 

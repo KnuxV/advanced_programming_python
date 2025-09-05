@@ -1,13 +1,13 @@
 <aside class="page-sidebar">
-  <!-- Home page: Show all classes -->
+  <!-- Home page: Show all classes with collapsible sections -->
   {% if page.layout == 'home' %}
     <h3>Course Navigation</h3>
     <nav class="sidebar-nav">
       {% for class in site.data.navigation.classes %}
         <div class="sidebar-section">
           <h4 class="collapsible-header" onclick="toggleSection('class-{{ class.number }}')">
+            <span>Class {{ class.number }}: {{ class.title }}</span>
             <span class="toggle-icon">+</span>
-            Class {{ class.number }}: {{ class.title }}
           </h4>
           <div class="collapsible-content" id="class-{{ class.number }}">
             {% if class.lessons %}
@@ -16,6 +16,16 @@
                 <ul class="sidebar-list">
                   {% for lesson in class.lessons %}
                     <li><a href="{{ lesson.path | relative_url }}">{{ lesson.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+            {% if class.code_examples %}
+              <div class="content-group">
+                <span class="group-label">Code Examples</span>
+                <ul class="sidebar-list">
+                  {% for example in class.code_examples %}
+                    <li><a href="{{ example.path | relative_url }}">{{ example.title }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -36,65 +46,138 @@
     </nav>
 
   <!-- Lesson/Exercise pages: Show current class content -->
-  {% elsif page.path contains 'lessons' or page.path contains 'exercices' %}
-    {% comment %} Find which class this page belongs to {% endcomment %}
+  {% else %}
+    {% comment %} Find which class this page belongs to by checking the URL path {% endcomment %}
     {% assign current_class = null %}
+    {% assign page_url = page.url | remove: '.html' %}
+    {% assign page_path_check = page.path | remove: '.md' | remove: '.html' %}
+
     {% for class in site.data.navigation.classes %}
+      {% comment %} Check lessons {% endcomment %}
       {% for lesson in class.lessons %}
-        {% if lesson.path == page.url or lesson.path contains page.slug %}
+        {% assign lesson_path_check = lesson.path | remove: '/' %}
+        {% assign page_path_simple = page_path_check | remove: 'lessons/' %}
+        {% if lesson.path == page_url or lesson_path_check == page_path_simple or lesson.path contains page.slug %}
           {% assign current_class = class %}
           {% break %}
         {% endif %}
       {% endfor %}
       {% if current_class %}{% break %}{% endif %}
+
+      {% comment %} Check exercises {% endcomment %}
       {% for exercise in class.exercises %}
-        {% if exercise.path == page.url or exercise.path contains page.slug %}
+        {% assign exercise_path_check = exercise.path | remove: '/' %}
+        {% assign page_path_simple = page_path_check | remove: 'exercices/' %}
+        {% if exercise.path == page_url or exercise_path_check == page_path_simple or exercise.path contains page.slug %}
           {% assign current_class = class %}
           {% break %}
         {% endif %}
       {% endfor %}
+      {% if current_class %}{% break %}{% endif %}
+
+      {% comment %} Check code examples {% endcomment %}
+      {% if class.code_examples %}
+        {% for example in class.code_examples %}
+          {% assign example_path_check = example.path | remove: '/' %}
+          {% if example.path == page_url or example_path_check contains page.slug %}
+            {% assign current_class = class %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
       {% if current_class %}{% break %}{% endif %}
     {% endfor %}
+
+    {% comment %} Fallback: If still no match, try to find by class_number variable {% endcomment %}
+    {% unless current_class %}
+      {% if page.class_number %}
+        {% for class in site.data.navigation.classes %}
+          {% if class.number == page.class_number %}
+            {% assign current_class = class %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endunless %}
 
     {% if current_class %}
       <h3>Class {{ current_class.number }}: {{ current_class.title }}</h3>
       <nav class="sidebar-nav">
         {% if current_class.lessons %}
           <div class="sidebar-section">
-            <h4>Lessons</h4>
-            <ul class="sidebar-list">
-              {% for lesson in current_class.lessons %}
-                <li class="{% if lesson.path == page.url %}current{% endif %}">
-                  <a href="{{ lesson.path | relative_url }}">{{ lesson.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
+            <h4 class="collapsible-header" onclick="toggleSection('lessons-section')">
+              <span>Lessons</span>
+              <span class="toggle-icon">+</span>
+            </h4>
+            <div class="collapsible-content open" id="lessons-section">
+              <ul class="sidebar-list">
+                {% for lesson in current_class.lessons %}
+                  {% assign is_current = false %}
+                  {% if lesson.path == page_url or lesson.path contains page.slug %}
+                    {% assign is_current = true %}
+                  {% endif %}
+                  <li class="{% if is_current %}current{% endif %}">
+                    <a href="{{ lesson.path | relative_url }}">{{ lesson.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         {% endif %}
 
         {% if current_class.code_examples %}
           <div class="sidebar-section">
-            <h4>Code Examples</h4>
-            <ul class="sidebar-list">
-              {% for example in current_class.code_examples %}
-                <li><a href="{{ example.path | relative_url }}">{{ example.title }}</a></li>
-              {% endfor %}
-            </ul>
+            <h4 class="collapsible-header" onclick="toggleSection('code-examples-section')">
+              <span>Code Examples</span>
+              <span class="toggle-icon">+</span>
+            </h4>
+            <div class="collapsible-content" id="code-examples-section">
+              <ul class="sidebar-list">
+                {% for example in current_class.code_examples %}
+                  {% assign is_current = false %}
+                  {% if example.path == page_url %}
+                    {% assign is_current = true %}
+                  {% endif %}
+                  <li class="{% if is_current %}current{% endif %}">
+                    <a href="{{ example.path | relative_url }}">{{ example.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         {% endif %}
 
         {% if current_class.exercises %}
           <div class="sidebar-section">
-            <h4>Exercises</h4>
-            <ul class="sidebar-list">
-              {% for exercise in current_class.exercises %}
-                <li class="{% if exercise.path == page.url %}current{% endif %}">
-                  <a href="{{ exercise.path | relative_url }}">{{ exercise.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
+            <h4 class="collapsible-header" onclick="toggleSection('exercises-section')">
+              <span>Exercises</span>
+              <span class="toggle-icon">+</span>
+            </h4>
+            <div class="collapsible-content" id="exercises-section">
+              <ul class="sidebar-list">
+                {% for exercise in current_class.exercises %}
+                  {% assign is_current = false %}
+                  {% if exercise.path == page_url or exercise.path contains page.slug %}
+                    {% assign is_current = true %}
+                  {% endif %}
+                  <li class="{% if is_current %}current{% endif %}">
+                    <a href="{{ exercise.path | relative_url }}">{{ exercise.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         {% endif %}
+      </nav>
+    {% else %}
+      <!-- Fallback: Show basic navigation if class can't be determined -->
+      <h3>Course Navigation</h3>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <ul class="sidebar-list">
+            <li><a href="{{ '/' | relative_url }}">← Back to Home</a></li>
+          </ul>
+        </div>
       </nav>
     {% endif %}
   {% endif %}
