@@ -3,13 +3,12 @@
   {%- include head.html -%}
   <body class="{{ page.layout }}">
     {%- include header.html -%}
-
-    <!-- Global Course Navigation Header -->
     <section class="global-course-nav">
       <div class="wrapper">
         <div class="course-classes">
           {% for class in site.data.navigation.classes %}
-          <a href="{{ '/#' | append: class.id | relative_url }}" class="class-link">
+          {% assign first_lesson = class.lessons[0] %}
+          <a href="{{ first_lesson.path | relative_url }}" class="class-link">
             <span class="class-number">Class {{ class.number }}</span>
             <span class="class-title">{{ class.title }}</span>
           </a>
