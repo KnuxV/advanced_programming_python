@@ -3,6 +3,7 @@
   {%- include head.html -%}
   <body class="{{ page.layout }}">
     {%- include header.html -%}
+
     <section class="global-course-nav">
       <div class="wrapper">
         <div class="course-classes">
@@ -17,17 +18,19 @@
       </div>
     </section>
 
-    <!-- Global Floating Navigation -->
-<!--    <nav class="global-floating-nav" id="globalFloatingNav">-->
-<!--      <button class="nav-toggle" onclick="toggleGlobalNav()">≡</button>-->
-<!--      <div class="nav-items">-->
-<!--        <a href="{{ '/' | relative_url }}">🏠 Home</a>-->
-<!--        {% for class in site.data.navigation.classes %}-->
-<!--        <a href="{{ '/#' | append: class.id | relative_url }}">Class {{ class.number }}: {{ class.title | truncate: 10 }}</a>-->
-<!--        {% endfor %}-->
-<!--        <a href="{{ '/#contributing' | relative_url }}">Contributing</a>-->
-<!--      </div>-->
-<!--    </nav>-->
+    <!-- Global Floating Navigation (commented out) -->
+    <!--
+    <nav class="global-floating-nav" id="globalFloatingNav">
+      <button class="nav-toggle" onclick="toggleGlobalNav()">≡</button>
+      <div class="nav-items">
+        <a href="{{ '/' | relative_url }}">🏠 Home</a>
+        {% for class in site.data.navigation.classes %}
+        <a href="{{ '/#' | append: class.id | relative_url }}">Class {{ class.number }}: {{ class.title | truncate: 10 }}</a>
+        {% endfor %}
+        <a href="{{ '/#contributing' | relative_url }}">Contributing</a>
+      </div>
+    </nav>
+    -->
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -37,23 +40,7 @@
 
     {%- include footer.html -%}
 
-    <!-- Global Navigation JavaScript -->
-    <script>
-      // Global floating navigation toggle
-      function toggleGlobalNav() {
-        const nav = document.getElementById('globalFloatingNav');
-        nav.classList.toggle('open');
-      }
-
-      // Close global nav when clicking outside
-      document.addEventListener('click', function(e) {
-        const nav = document.getElementById('globalFloatingNav');
-        if (!nav.contains(e.target)) {
-          nav.classList.remove('open');
-        }
-      });
-    </script>
-
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    <script src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
   </body>
 </html>
