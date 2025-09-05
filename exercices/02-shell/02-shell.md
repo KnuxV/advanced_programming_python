@@ -1,3 +1,8 @@
+---
+layout: page
+title: Shell Commands
+class_number: 1
+---
 # Shell Commands for Data Analysis
 
 ## Creating Sample Data

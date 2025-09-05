@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Linux Shell Introduction
+class_number: 1
 ---
 
 # Working with a Linux Environment

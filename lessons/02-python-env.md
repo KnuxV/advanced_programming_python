@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Python Package Management
+class_number: 2
 ---
 
 # Python Package Management: pip, venv, and conda

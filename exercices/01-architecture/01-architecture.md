@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Exercise 1: Project Architecture"
+class_number: 1
 date: 2025-08-01
 due_date: "Week 2"
 difficulty: "Beginner"
