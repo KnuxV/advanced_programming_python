@@ -1,7 +1,9 @@
 title: Advanced Python Programming
-description: Economics Master - Python Course
+description: Kevin Michoud & Pierre Pelletier
 baseurl: "/advanced_programming_python"
 url: "https://knuxv.github.io"
+author:
+  name: Kevin Michoud
 
 markdown: kramdown
 highlighter: rouge
