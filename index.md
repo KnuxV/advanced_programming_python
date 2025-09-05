@@ -18,80 +18,73 @@ Help shape the course by participating in these anonymous polls:
 
 ---
 
-## Course Lessons
+## Class 1: Shell & Environment
 
-### [Shell Introduction]({{ '/lessons/01-shell-intro' | relative_url }})
-Learn essential terminal skills, development environment setup, and shell scripting basics.
+### Lessons
+1. [Shell Introduction]({{ '/lessons/01-shell-intro' | relative_url }}) - Learn essential terminal skills, development environment setup, and shell scripting basics
+2. [Python Environment Management]({{ '/lessons/02-python-env' | relative_url }}) - Master virtual environments, dependency management, and Python development workflows
 
-### [Python Environment Management]({{ '/lessons/02-python-env' | relative_url }})
-Master virtual environments, dependency management, and Python development workflows.
-
-### [Git Version Control]({{ '/lessons/03-git-version-control' | relative_url }})
-Understand Git fundamentals, branching strategies, and collaborative development.
-
-### [Data Structures]({{ '/lessons/04-data_structures' | relative_url }})
-Deep dive into Python data structures and their practical applications.
-
-### [Polars vs Pandas]({{ '/lessons/05-polars_vs_pandas' | relative_url }})
-Compare and contrast these powerful data manipulation libraries.
-
-### Organization & Packaging
-- [Variables & Configurations]({{ '/lessons/06-organization_packaging/060-var_configs' | relative_url }})
-- [Basic Imports]({{ '/lessons/06-organization_packaging/061-basic_import' | relative_url }})
-- [Packages]({{ '/lessons/06-organization_packaging/062-packages' | relative_url }})
-- [Building Configuration]({{ '/lessons/06-organization_packaging/063-building_config' | relative_url }})
-- [Publishing & References]({{ '/lessons/06-organization_packaging/064-publishing_and_refs' | relative_url }})
-
-### Command Line Arguments
-- [argv & argparse]({{ '/lessons/07-arguments/071-argv_argparse' | relative_url }})
-- [Advanced Arguments]({{ '/lessons/07-arguments/072-advanced' | relative_url }})
+### Exercises
+- [Computer Architecture Basics]({{ '/exercices/01-architecture/01-architecture' | relative_url }}) - Fundamentals of computer architecture and system design
+- [Shell Commands Practice]({{ '/exercices/02-shell/02-shell' | relative_url }}) - Hands-on practice with essential terminal commands
+- [SQL with Shell (Cyberbase)]({{ '/exercices/02bis-SQL_with_shell_cyberbase/instructions' | relative_url }}) - Database queries using shell tools and SQL
 
 ---
 
-## Exercises
+## Class 2: Git Version Control
 
-### [Computer Architecture Basics]({{ '/exercices/01-architecture/01-architecture' | relative_url }})
-Fundamentals of computer architecture and system design.
+### Lessons
+3. [Git Version Control]({{ '/lessons/03-git-version-control' | relative_url }}) - Understand Git fundamentals, branching strategies, and collaborative development
 
-### [Shell Commands Practice]({{ '/exercices/02-shell/02-shell' | relative_url }})
-Hands-on practice with essential terminal commands.
-
-### [SQL with Shell (Cyberbase)]({{ '/exercices/02bis-SQL_with_shell_cyberbase/instructions' | relative_url }})
-Database queries using shell tools and SQL.
-
-### [Detective Story: Shell Investigation]({{ '/exercices/03-detective_story' | relative_url }})
-A fun mystery-solving exercise using shell commands.
-
-### [Git Scrabble Exercise]({{ '/exercices/04-scrabble_git_exercice' | relative_url }})
-Learn Git workflows through a collaborative Scrabble project.
-
-### [Pull Requests Workshop]({{ '/exercices/05-pull_requests' | relative_url }})
-Master the art of code collaboration and review.
-
-### [Country Class]({{ '/exercices/06-country_class' | relative_url }})
-Object-oriented programming with Python classes.
-
-### [Department SQL Class]({{ '/exercices/07-departement_sql_class' | relative_url }})
-Combine Python classes with SQL database operations.
-
-### [Project Organization]({{ '/exercices/08-project_orgs' | relative_url }})
-Best practices for structuring Python projects.
-
-### [Password Generator]({{ '/exercices/09-password_generator/instructions' | relative_url }})
-Build a secure password generation tool.
+### Exercises
+- [Detective Story: Shell Investigation]({{ '/exercices/03-detective_story' | relative_url }}) - A fun mystery-solving exercise using shell commands
+- [Git Scrabble Exercise]({{ '/exercices/04-scrabble_git_exercice' | relative_url }}) - Learn Git workflows through a collaborative Scrabble project
+- [Pull Requests Workshop]({{ '/exercices/05-pull_requests' | relative_url }}) - Master the art of code collaboration and review
 
 ---
 
-## Code Examples
+## Class 3: Data Structures
 
-### [Hash Table Implementation]({{ '/code-examples/03-hash_table.ipynb' | relative_url }})
-Understanding hash tables through practical implementation.
+### Lessons
+4. [Data Structures]({{ '/lessons/04-data_structures' | relative_url }}) - Deep dive into Python data structures and their practical applications
 
-### [SQL Classes Example]({{ '/code-examples/04-class_for_sql/departement_example.ipynb' | relative_url }})
-Working with databases using Python classes.
+### Code Examples
+- [Hash Table Implementation]({{ '/code-examples/03-hash_table.ipynb' | relative_url }}) - Understanding hash tables through practical implementation
+- [SQL Classes Example]({{ '/code-examples/04-class_for_sql/departement_example.ipynb' | relative_url }}) - Working with databases using Python classes
 
-### [Polars vs Pandas Comparison]({{ '/code-examples/05-polars_vs_pandas.ipynb' | relative_url }})
-Side-by-side comparison of data manipulation libraries.
+### Exercises
+- [Country Class]({{ '/exercices/06-country_class' | relative_url }}) - Object-oriented programming with Python classes
+- [Department SQL Class]({{ '/exercices/07-departement_sql_class' | relative_url }}) - Combine Python classes with SQL database operations
+
+---
+
+## Class 4: Polars
+
+### Lessons
+5. [Polars vs Pandas]({{ '/lessons/05-polars_vs_pandas' | relative_url }}) - Compare and contrast these powerful data manipulation libraries
+
+### Code Examples
+- [Polars vs Pandas Comparison]({{ '/code-examples/05-polars_vs_pandas.ipynb' | relative_url }}) - Side-by-side comparison of data manipulation libraries
+
+---
+
+## Class 5: Arguments & Organization
+
+### Lessons
+#### 6. Organization
+- [Variables & Configurations]({{ '/lessons/06-organization_packaging/060-var_configs' | relative_url }}) - Managing variables and configurations in Python projects
+- [Basic Imports]({{ '/lessons/06-organization_packaging/061-basic_import' | relative_url }}) - Understanding Python import system
+- [Packages]({{ '/lessons/06-organization_packaging/062-packages' | relative_url }}) - Creating and structuring Python packages
+- [Building Configuration]({{ '/lessons/06-organization_packaging/063-building_config' | relative_url }}) - Configuration management best practices
+- [Publishing & References]({{ '/lessons/06-organization_packaging/064-publishing_and_refs' | relative_url }}) - Publishing packages and managing references
+
+#### 7. Arguments
+- [argv & argparse]({{ '/lessons/07-arguments/071-argv_argparse' | relative_url }}) - Command line argument parsing
+- [Advanced Arguments]({{ '/lessons/07-arguments/072-advanced' | relative_url }}) - Advanced command line interface techniques
+
+### Exercises
+- [Project Organization]({{ '/exercices/08-project_orgs' | relative_url }}) - Best practices for structuring Python projects
+- [Password Generator]({{ '/exercices/09-password_generator/instructions' | relative_url }}) - Build a secure password generation tool
 
 ---
 
