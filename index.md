@@ -18,7 +18,7 @@ Help shape the course by participating in these anonymous polls:
 
 ---
 
-## Class 1: Shell & Environment
+## Class 1: Shell & Environment {#class-1}
 
 ### Lessons
 1. [Shell Introduction]({{ '/lessons/01-shell-intro' | relative_url }}) - Learn essential terminal skills, development environment setup, and shell scripting basics
@@ -31,7 +31,7 @@ Help shape the course by participating in these anonymous polls:
 
 ---
 
-## Class 2: Git Version Control
+## Class 2: Git Version Control {#class-2}
 
 ### Lessons
 3. [Git Version Control]({{ '/lessons/03-git-version-control' | relative_url }}) - Understand Git fundamentals, branching strategies, and collaborative development
@@ -43,7 +43,7 @@ Help shape the course by participating in these anonymous polls:
 
 ---
 
-## Class 3: Data Structures
+## Class 3: Data Structures {#class-3}
 
 ### Lessons
 4. [Data Structures]({{ '/lessons/04-data_structures' | relative_url }}) - Deep dive into Python data structures and their practical applications
@@ -58,7 +58,7 @@ Help shape the course by participating in these anonymous polls:
 
 ---
 
-## Class 4: Polars
+## Class 4: Polars {#class-4}
 
 ### Lessons
 5. [Polars vs Pandas]({{ '/lessons/05-polars_vs_pandas' | relative_url }}) - Compare and contrast these powerful data manipulation libraries
@@ -68,7 +68,7 @@ Help shape the course by participating in these anonymous polls:
 
 ---
 
-## Class 5: Arguments & Organization
+## Class 5: Arguments & Organization {#class-5}
 
 ### Lessons
 #### 6. Organization
@@ -88,7 +88,7 @@ Help shape the course by participating in these anonymous polls:
 
 ---
 
-## Contributing to the Course
+## Contributing to the Course {#contributing}
 
 ### Earn Bonus Points! 🌟
 Contribute to our course materials and earn 0.5-1 bonus points on your final grade.
