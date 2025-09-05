@@ -6,30 +6,120 @@ classes:
     title: "Shell & Environment"
     id: "class-1"
     lessons:
-      - "Shell Introduction"
-      - "Python Environment Management"
+      - title: "Shell Introduction"
+        path: "/lessons/01-shell-intro"
+      - title: "Python Environment Management"
+        path: "/lessons/02-python-env"
+    exercises:
+      - title: "Computer Architecture Basics"
+        path: "/exercices/01-architecture/01-architecture"
+        description: "Fundamentals of computer architecture and system design"
+      - title: "Shell Commands Practice"
+        path: "/exercices/02-shell/02-shell"
+        description: "Hands-on practice with essential terminal commands"
+      - title: "SQL with Shell (Cyberbase)"
+        path: "/exercices/02bis-SQL_with_shell_cyberbase/instructions"
+        description: "Database queries using shell tools and SQL"
 
   - number: 2
     title: "Git Version Control"
     id: "class-2"
     lessons:
-      - "Git Version Control"
+      - title: "Git Version Control"
+        path: "/lessons/03-git-version-control"
+        description: "Understand Git fundamentals, branching strategies, and collaborative development"
+    exercises:
+      - title: "Detective Story: Shell Investigation"
+        path: "/exercices/03-detective_story"
+        description: "A fun mystery-solving exercise using shell commands"
+      - title: "Git Scrabble Exercise"
+        path: "/exercices/04-scrabble_git_exercice"
+        description: "Learn Git workflows through a collaborative Scrabble project"
+      - title: "Pull Requests Workshop"
+        path: "/exercices/05-pull_requests"
+        description: "Master the art of code collaboration and review"
 
   - number: 3
     title: "Data Structures"
     id: "class-3"
     lessons:
-      - "Data Structures"
+      - title: "Data Structures"
+        path: "/lessons/04-data_structures"
+        description: "Deep dive into Python data structures and their practical applications"
+    code_examples:
+      - title: "Hash Table Implementation"
+        path: "/code-examples/03-hash_table.ipynb"
+        description: "Understanding hash tables through practical implementation"
+      - title: "SQL Classes Example"
+        path: "/code-examples/04-class_for_sql/departement_example.ipynb"
+        description: "Working with databases using Python classes"
+    exercises:
+      - title: "Country Class"
+        path: "/exercices/06-country_class"
+        description: "Object-oriented programming with Python classes"
+      - title: "Department SQL Class"
+        path: "/exercices/07-departement_sql_class"
+        description: "Combine Python classes with SQL database operations"
 
   - number: 4
     title: "Polars"
     id: "class-4"
     lessons:
-      - "Polars vs Pandas"
+      - title: "Polars vs Pandas"
+        path: "/lessons/05-polars_vs_pandas"
+        description: "Compare and contrast these powerful data manipulation libraries"
+    code_examples:
+      - title: "Polars vs Pandas Comparison"
+        path: "/code-examples/05-polars_vs_pandas.ipynb"
+        description: "Side-by-side comparison of data manipulation libraries"
 
   - number: 5
     title: "Arguments & Organization"
     id: "class-5"
     lessons:
-      - "Organization"
-      - "Arguments"
+      - title: "Variables & Configurations"
+        path: "/lessons/06-organization_packaging/060-var_configs"
+        description: "Managing variables and configurations in Python projects"
+      - title: "Basic Imports"
+        path: "/lessons/06-organization_packaging/061-basic_import"
+        description: "Understanding Python import system"
+      - title: "Packages"
+        path: "/lessons/06-organization_packaging/062-packages"
+        description: "Creating and structuring Python packages"
+      - title: "Building Configuration"
+        path: "/lessons/06-organization_packaging/063-building_config"
+        description: "Configuration management best practices"
+      - title: "Publishing & References"
+        path: "/lessons/06-organization_packaging/064-publishing_and_refs"
+        description: "Publishing packages and managing references"
+      - title: "argv & argparse"
+        path: "/lessons/07-arguments/071-argv_argparse"
+        description: "Command line argument parsing"
+      - title: "Advanced Arguments"
+        path: "/lessons/07-arguments/072-advanced"
+        description: "Advanced command line interface techniques"
+    exercises:
+      - title: "Project Organization"
+        path: "/exercices/08-project_orgs"
+        description: "Best practices for structuring Python projects"
+      - title: "Password Generator"
+        path: "/exercices/09-password_generator/instructions"
+        description: "Build a secure password generation tool"
+
+# Course metadata
+course:
+  polls:
+    - title: "Language preference: English vs French"
+      url: "https://strawpoll.com/2ayLQXkzvn4"
+      icon: "📊"
+    - title: "Your OS: Windows, Mac, Linux, etc."
+      url: "https://strawpoll.com/w4nWWVrwQnA"
+      icon: "💻"
+
+  resources:
+    - title: "Course Repository on GitHub"
+      url: "https://github.com/KnuxV/advanced_programming_python"
+    - title: "Python Official Documentation"
+      url: "https://docs.python.org/"
+    - title: "Git Documentation"
+      url: "https://git-scm.com/doc"

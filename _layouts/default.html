@@ -8,26 +8,12 @@
     <section class="global-course-nav">
       <div class="wrapper">
         <div class="course-classes">
-          <a href="{{ '/#class-1' | relative_url }}" class="class-link">
-            <span class="class-number">Class 1</span>
-            <span class="class-title">Shell & Environment</span>
+          {% for class in site.data.navigation.classes %}
+          <a href="{{ '/#' | append: class.id | relative_url }}" class="class-link">
+            <span class="class-number">Class {{ class.number }}</span>
+            <span class="class-title">{{ class.title }}</span>
           </a>
-          <a href="{{ '/#class-2' | relative_url }}" class="class-link">
-            <span class="class-number">Class 2</span>
-            <span class="class-title">Git Version Control</span>
-          </a>
-          <a href="{{ '/#class-3' | relative_url }}" class="class-link">
-            <span class="class-number">Class 3</span>
-            <span class="class-title">Data Structures</span>
-          </a>
-          <a href="{{ '/#class-4' | relative_url }}" class="class-link">
-            <span class="class-number">Class 4</span>
-            <span class="class-title">Polars</span>
-          </a>
-          <a href="{{ '/#class-5' | relative_url }}" class="class-link">
-            <span class="class-number">Class 5</span>
-            <span class="class-title">Arguments & Organization</span>
-          </a>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -37,11 +23,9 @@
       <button class="nav-toggle" onclick="toggleGlobalNav()">≡</button>
       <div class="nav-items">
         <a href="{{ '/' | relative_url }}">🏠 Home</a>
-        <a href="{{ '/#class-1' | relative_url }}">Class 1: Shell</a>
-        <a href="{{ '/#class-2' | relative_url }}">Class 2: Git</a>
-        <a href="{{ '/#class-3' | relative_url }}">Class 3: Data</a>
-        <a href="{{ '/#class-4' | relative_url }}">Class 4: Polars</a>
-        <a href="{{ '/#class-5' | relative_url }}">Class 5: Args</a>
+        {% for class in site.data.navigation.classes %}
+        <a href="{{ '/#' | append: class.id | relative_url }}">Class {{ class.number }}: {{ class.title | truncate: 10 }}</a>
+        {% endfor %}
         <a href="{{ '/#contributing' | relative_url }}">Contributing</a>
       </div>
     </nav>
