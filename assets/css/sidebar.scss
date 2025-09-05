@@ -3,14 +3,15 @@
 
 /* Sidebar Styles */
 .page-sidebar {
-  width: 150px;
+  width: 220px;
   background: #f8f9fa;
   border-radius: 8px;
   padding: 1rem;
   height: fit-content;
   position: sticky;
-  top: 1.5rem;
+  top: 2rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0;
 }
 
 .page-sidebar h3 {
@@ -21,7 +22,6 @@
   padding-bottom: 0.5rem;
 }
 
-/* Collapsible sections */
 .sidebar-section {
   margin-bottom: 0.5rem;
 }
@@ -45,50 +45,10 @@
   background: #dee2e6;
 }
 
-.toggle-icon {
-  font-weight: bold;
-  font-size: 1rem;
-  transition: transform 0.2s ease;
-}
-
-.collapsible-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.collapsible-content.open {
-  max-height: 500px;
-}
-
-/* When expanded, rotate the + to - */
-.collapsible-header.open .toggle-icon {
-  transform: rotate(45deg);
-}
-
-/* Content groups */
-.content-group {
-  margin-bottom: 0.75rem;
-}
-
-.group-label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #6c757d;
-  margin-bottom: 0.25rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 .sidebar-list {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.sidebar-list li {
-  margin-bottom: 0.25rem;
 }
 
 .sidebar-list a {
@@ -99,109 +59,9 @@
   border-radius: 3px;
   transition: all 0.2s ease;
   font-size: 0.8rem;
-  line-height: 1.3;
 }
 
 .sidebar-list a:hover {
   background: #e9ecef;
   color: #2c3e50;
-}
-
-.sidebar-list li.current a {
-  background: #007bff;
-  color: white;
-  font-weight: 500;
-}
-
-.sidebar-list li.current a:hover {
-  background: #0056b3;
-}
-
-/* Lesson/Exercise page styles */
-.sidebar-section h4 {
-  margin: 0 0 0.75rem 0;
-  color: #495057;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 992px) {
-  .page-sidebar {
-    width: 100%;
-    position: static;
-    margin-top: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-sidebar {
-    padding: 0.75rem;
-    width: 180px;
-  }
-
-  .collapsible-header {
-    font-size: 0.75rem;
-    padding: 0.4rem;
-  }
-
-  .sidebar-list a {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.4rem;
-  }
-}
-/* Add these improvements to your existing sidebar.scss */
-
-
-
-.main-content {
-  flex: 1;
-  min-width: 0; /* Important for flex overflow handling */
-  max-width: none; /* Remove any width restrictions */
-}
-
-
-  .page-sidebar {
-    width: 280px; /* Slightly wider sidebar on large screens */
-  }
-
-
-
-/* Ensure the sidebar appears on lesson pages - add this class matching logic */
-.page-sidebar {
-  width: 220px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 1rem;
-  height: fit-content;
-  position: sticky;
-  top: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  flex-shrink: 0; /* Prevent sidebar from shrinking */
-}
-
-/* Fix the collapsible functionality - make sure icons change properly */
-.collapsible-header.open {
-  background: #dee2e6;
-}
-
-.collapsible-header.open .toggle-icon {
-  transform: rotate(45deg);
-}
-
-/* Improve content spacing in lessons */
-.lesson-content,
-.main-content > article {
-  width: 100%;
-  max-width: none;
-}
-
-
-
-  .page-sidebar {
-    width: 100%;
-    position: static;
-    margin-top: 2rem;
-    order: 2; /* Put sidebar after content on mobile */
-  }
 }
