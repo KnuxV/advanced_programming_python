@@ -1,0 +1,35 @@
+# Single source of truth for course navigation
+# Edit this file to add/remove/modify classes
+
+classes:
+  - number: 1
+    title: "Shell & Environment"
+    id: "class-1"
+    lessons:
+      - "Shell Introduction"
+      - "Python Environment Management"
+
+  - number: 2
+    title: "Git Version Control"
+    id: "class-2"
+    lessons:
+      - "Git Version Control"
+
+  - number: 3
+    title: "Data Structures"
+    id: "class-3"
+    lessons:
+      - "Data Structures"
+
+  - number: 4
+    title: "Polars"
+    id: "class-4"
+    lessons:
+      - "Polars vs Pandas"
+
+  - number: 5
+    title: "Arguments & Organization"
+    id: "class-5"
+    lessons:
+      - "Organization"
+      - "Arguments"

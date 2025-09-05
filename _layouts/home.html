@@ -1,176 +1,95 @@
----
-# This layout overrides the theme's home with a custom hero and content wrapper.
----
-
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {%- include head.html -%}
-  <body class="home">
+  <body class="{{ page.layout }}">
     {%- include header.html -%}
+
+    <!-- Dynamic Global Course Navigation Header -->
+    <section class="global-course-nav">
+      <div class="wrapper">
+        <div class="course-classes">
+          {% for class in site.data.navigation.classes %}
+          <a href="{{ '/#' | append: class.id | relative_url }}" class="class-link">
+            <span class="class-number">Class {{ class.number }}</span>
+            <span class="class-title">{{ class.title }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Global Floating Navigation -->
+    <nav class="global-floating-nav" id="globalFloatingNav">
+      <button class="nav-toggle" onclick="toggleGlobalNav()">≡</button>
+      <div class="nav-items">
+        <a href="{{ '/' | relative_url }}">🏠 Home</a>
+        {% for class in site.data.navigation.classes %}
+        <a href="{{ '/#' | append: class.id | relative_url }}">Class {{ class.number }}: {{ class.title | truncate: 15 }}</a>
+        {% endfor %}
+        <a href="{{ '/#contributing' | relative_url }}">Contributing</a>
+      </div>
+    </nav>
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <section class="hero">
-          <h1>{{ page.title | default: site.title }}</h1>
-          {%- if site.description -%}
-          <p class="subtitle">{{ site.description }}</p>
-          {%- endif -%}
-
-          <!-- Quick Navigation Cards -->
-          <div class="quick-nav">
-            <div class="nav-grid">
-              <a class="nav-card" href="#class-1">
-                <h3>Class 1</h3>
-                <p>Shell & Environment</p>
-              </a>
-              <a class="nav-card" href="#class-2">
-                <h3>Class 2</h3>
-                <p>Git Version Control</p>
-              </a>
-              <a class="nav-card" href="#class-3">
-                <h3>Class 3</h3>
-                <p>Data Structures</p>
-              </a>
-              <a class="nav-card" href="#class-4">
-                <h3>Class 4</h3>
-                <p>Polars</p>
-              </a>
-              <a class="nav-card" href="#class-5">
-                <h3>Class 5</h3>
-                <p>Arguments & Organization</p>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Progress Indicator -->
-        <section class="progress-section">
-          <h2>Course Progress</h2>
-          <div class="progress-bar">
-            <div class="progress-step completed">1</div>
-            <div class="progress-step">2</div>
-            <div class="progress-step">3</div>
-            <div class="progress-step">4</div>
-            <div class="progress-step">5</div>
-          </div>
-        </section>
-
-        <!-- Floating Navigation -->
-        <nav class="floating-nav" id="floatingNav">
-          <button class="nav-toggle" onclick="toggleNav()">≡</button>
-          <div class="nav-items">
-            <a href="#class-1" onclick="scrollToSection('class-1')">Class 1</a>
-            <a href="#class-2" onclick="scrollToSection('class-2')">Class 2</a>
-            <a href="#class-3" onclick="scrollToSection('class-3')">Class 3</a>
-            <a href="#class-4" onclick="scrollToSection('class-4')">Class 4</a>
-            <a href="#class-5" onclick="scrollToSection('class-5')">Class 5</a>
-            <a href="#contributing" onclick="scrollToSection('contributing')">Contributing</a>
-          </div>
-        </nav>
-
-        <section class="content">
-          {{ content }}
-        </section>
-
-        <!-- Back to top button -->
-        <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+        {{ content }}
       </div>
     </main>
 
     {%- include footer.html -%}
 
-    <!-- Enhanced CSS -->
+    <!-- Global Navigation Styles -->
     <style>
-      /* Quick Navigation Cards */
-      .quick-nav {
-        margin: 2rem 0;
-      }
-
-      .nav-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin: 1rem 0;
-      }
-
-      .nav-card {
-        background: #f8f9fa;
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-decoration: none;
-        color: #495057;
-        transition: all 0.3s ease;
-        text-align: center;
-      }
-
-      .nav-card:hover {
-        background: #e9ecef;
-        border-color: #007bff;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0,123,255,0.15);
-      }
-
-      .nav-card h3 {
-        margin: 0 0 0.5rem 0;
-        color: #007bff;
-        font-size: 1.2rem;
-      }
-
-      .nav-card p {
-        margin: 0;
-        font-size: 0.9rem;
-        color: #6c757d;
-      }
-
-      /* Progress Indicator */
-      .progress-section {
-        background: #f8f9fa;
-        padding: 2rem;
-        border-radius: 8px;
-        margin: 2rem 0;
-        text-align: center;
-      }
-
-      .progress-bar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .progress-step {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #e9ecef;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: #6c757d;
-        position: relative;
-      }
-
-      .progress-step.completed {
-        background: #28a745;
+      /* Global Course Navigation Header */
+      .global-course-nav {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
+        padding: 1rem 0;
+        margin-bottom: 2rem;
       }
 
-      .progress-step:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        right: -1.5rem;
-        width: 2rem;
-        height: 2px;
-        background: #e9ecef;
-        top: 50%;
-        transform: translateY(-50%);
+      .course-classes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
       }
 
-      /* Floating Navigation */
-      .floating-nav {
+      .class-link {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        min-width: 120px;
+        text-align: center;
+        flex: 1;
+        max-width: 200px;
+      }
+
+      .class-link:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateY(-2px);
+      }
+
+      .class-number {
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .class-title {
+        font-size: 0.8rem;
+        opacity: 0.9;
+        line-height: 1.2;
+      }
+
+      /* Global Floating Navigation */
+      .global-floating-nav {
         position: fixed;
         top: 50%;
         right: 20px;
@@ -183,8 +102,8 @@
         transition: all 0.3s ease;
       }
 
-      .nav-toggle {
-        background: #007bff;
+      .global-floating-nav .nav-toggle {
+        background: #667eea;
         color: white;
         border: none;
         padding: 12px 16px;
@@ -193,169 +112,98 @@
         width: 100%;
       }
 
-      .nav-items {
+      .global-floating-nav .nav-items {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
       }
 
-      .floating-nav.open .nav-items {
-        max-height: 300px;
+      .global-floating-nav.open .nav-items {
+        max-height: 400px;
       }
 
-      .nav-items a {
+      .global-floating-nav .nav-items a {
         display: block;
         padding: 12px 16px;
         text-decoration: none;
         color: #495057;
         border-bottom: 1px solid #e9ecef;
         transition: background 0.2s ease;
+        white-space: nowrap;
       }
 
-      .nav-items a:hover {
+      .global-floating-nav .nav-items a:hover {
         background: #f8f9fa;
-        color: #007bff;
+        color: #667eea;
       }
 
-      /* Back to top button */
-      .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,123,255,0.3);
-        opacity: 0;
-        transition: all 0.3s ease;
-        z-index: 999;
-      }
-
-      .back-to-top.visible {
-        opacity: 1;
-      }
-
-      .back-to-top:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0,123,255,0.4);
+      /* Auto-scaling for different numbers of classes */
+      @media (max-width: 1200px) {
+        .course-classes {
+          justify-content: center;
+        }
       }
 
       /* Mobile responsiveness */
       @media (max-width: 768px) {
-        .floating-nav {
+        .class-link {
+          min-width: 100px;
+          flex: none;
+        }
+
+        .class-number {
+          font-size: 0.9rem;
+        }
+
+        .class-title {
+          font-size: 0.7rem;
+        }
+
+        .global-floating-nav {
           position: relative;
           right: auto;
           top: auto;
           transform: none;
-          margin: 2rem 0;
+          margin: 1rem;
         }
 
-        .nav-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .progress-bar {
-          flex-wrap: wrap;
-          gap: 0.5rem;
+        .global-floating-nav .nav-items {
+          max-height: none;
         }
       }
 
       /* Dark mode support */
       @media (prefers-color-scheme: dark) {
-        .nav-card {
+        .global-floating-nav {
           background: #2d3748;
-          border-color: #4a5568;
-          color: #e2e8f0;
         }
 
-        .nav-card:hover {
+        .global-floating-nav .nav-items a {
+          color: #e2e8f0;
+          border-color: #4a5568;
+        }
+
+        .global-floating-nav .nav-items a:hover {
           background: #4a5568;
-          border-color: #63b3ed;
-        }
-
-        .nav-card p {
-          color: #a0aec0;
-        }
-
-        .progress-section {
-          background: #2d3748;
-          color: #e2e8f0;
-        }
-
-        .floating-nav {
-          background: #2d3748;
-        }
-
-        .nav-items a {
-          color: #e2e8f0;
-          border-color: #4a5568;
+          color: #90cdf4;
         }
       }
     </style>
 
-    <!-- Enhanced JavaScript -->
+    <!-- Global Navigation JavaScript -->
     <script>
-      // Floating navigation toggle
-      function toggleNav() {
-        const nav = document.getElementById('floatingNav');
+      // Global floating navigation toggle
+      function toggleGlobalNav() {
+        const nav = document.getElementById('globalFloatingNav');
         nav.classList.toggle('open');
       }
 
-      // Smooth scroll to sections
-      function scrollToSection(sectionId) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-        // Close floating nav on mobile
-        document.getElementById('floatingNav').classList.remove('open');
-      }
-
-      // Back to top functionality
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-
-      // Show/hide back to top button
-      window.addEventListener('scroll', function() {
-        const backToTop = document.getElementById('backToTop');
-        if (window.pageYOffset > 300) {
-          backToTop.classList.add('visible');
-        } else {
-          backToTop.classList.remove('visible');
-        }
-      });
-
-      // Close floating nav when clicking outside
+      // Close global nav when clicking outside
       document.addEventListener('click', function(e) {
-        const nav = document.getElementById('floatingNav');
+        const nav = document.getElementById('globalFloatingNav');
         if (!nav.contains(e.target)) {
           nav.classList.remove('open');
         }
-      });
-
-      // Highlight current section in navigation
-      window.addEventListener('scroll', function() {
-        const sections = ['class-1', 'class-2', 'class-3', 'class-4', 'class-5'];
-        const navLinks = document.querySelectorAll('.nav-items a');
-
-        sections.forEach((sectionId, index) => {
-          const section = document.getElementById(sectionId);
-          if (section) {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 100 && rect.bottom >= 100) {
-              navLinks.forEach(link => link.classList.remove('active'));
-              if (navLinks[index]) {
-                navLinks[index].classList.add('active');
-              }
-            }
-          }
-        });
       });
     </script>
 
