@@ -152,14 +152,7 @@
 }
 /* Add these improvements to your existing sidebar.scss */
 
-/* Fix the content wrapper to be wider for large screens */
-.content-wrapper {
-  display: flex;
-  gap: 2rem;
-  max-width: 1400px; /* Increased from smaller default */
-  margin: 0 auto;
-  padding: 1.5rem;
-}
+
 
 .main-content {
   flex: 1;
@@ -167,23 +160,12 @@
   max-width: none; /* Remove any width restrictions */
 }
 
-/* Better responsive breakpoints for content width */
-@media (min-width: 1200px) {
-  .content-wrapper {
-    max-width: 1600px; /* Even wider for very large screens */
-    gap: 3rem;
-  }
 
   .page-sidebar {
     width: 280px; /* Slightly wider sidebar on large screens */
   }
-}
 
-@media (min-width: 1400px) {
-  .content-wrapper {
-    max-width: 1800px; /* Maximum width for ultra-wide screens */
-  }
-}
+
 
 /* Ensure the sidebar appears on lesson pages - add this class matching logic */
 .page-sidebar {
@@ -214,12 +196,7 @@
   max-width: none;
 }
 
-/* Better responsive behavior */
-@media (max-width: 992px) {
-  .content-wrapper {
-    flex-direction: column;
-    max-width: 100%;
-  }
+
 
   .page-sidebar {
     width: 100%;
