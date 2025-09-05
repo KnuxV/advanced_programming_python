@@ -5,14 +5,32 @@
     <nav class="sidebar-nav">
       {% for class in site.data.navigation.classes %}
         <div class="sidebar-section">
-          <h4>Class {{ class.number }}: {{ class.title }}</h4>
-          {% if class.lessons %}
-            <ul class="sidebar-list">
-              {% for lesson in class.lessons %}
-                <li><a href="{{ lesson.path | relative_url }}">{{ lesson.title }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endif %}
+          <h4 class="collapsible-header" onclick="toggleSection('class-{{ class.number }}')">
+            <span class="toggle-icon">+</span>
+            Class {{ class.number }}: {{ class.title }}
+          </h4>
+          <div class="collapsible-content" id="class-{{ class.number }}">
+            {% if class.lessons %}
+              <div class="content-group">
+                <span class="group-label">Lessons</span>
+                <ul class="sidebar-list">
+                  {% for lesson in class.lessons %}
+                    <li><a href="{{ lesson.path | relative_url }}">{{ lesson.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+            {% if class.exercises %}
+              <div class="content-group">
+                <span class="group-label">Exercises</span>
+                <ul class="sidebar-list">
+                  {% for exercise in class.exercises %}
+                    <li><a href="{{ exercise.path | relative_url }}">{{ exercise.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </div>
         </div>
       {% endfor %}
     </nav>
