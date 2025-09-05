@@ -100,13 +100,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .course-classes {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.25rem;
-  }
 
   .class-link {
     flex: none;
