@@ -170,6 +170,7 @@ source venv/bin/activate
 
 # 2. Add venv to .gitignore (don't commit it)
 echo "venv/" >> .gitignore
+# https://github.com/github/gitignore/blob/main/Python.gitignore
 
 
 # 3. Create requirements.txt for others
@@ -201,8 +202,6 @@ python3.11 -m venv venv --clear    # Recreate with different version
 # Can't activate?
 # Make sure you're using the right command for your shell
 source venv/bin/activate           # bash/zsh (Linux/Mac)
-. venv/bin/activate               # Alternative syntax
-source venv/Scripts/activate      # Git Bash on Windows
 
 # Package installed globally by mistake?
 deactivate                        # Exit virtual env
@@ -314,7 +313,7 @@ cat environment.yml
 
 # Create environment from file
 conda env create -f environment.yml
-
+```
 
 
 **Best Practice: Use both!**
@@ -323,12 +322,10 @@ conda env create -f environment.yml
 conda create -n myproject python=3.10
 conda activate myproject
 conda install numpy pandas scipy  # Scientific packages
-```
-# Use pip for packages not in conda
-```
 pip install some-special-package  # Only on PyPI
 # Always use pip AFTER conda installs
 ```
+
 
 ### When to Use Which?
 
@@ -360,20 +357,6 @@ conda create -n ds_project python=3.10 jupyter pandas numpy matplotlib seaborn s
 conda activate ds_project
 conda install -c conda-forge plotly
 pip install kaggle  # Not in conda
-
-# 3. Export environment
-conda env export --no-builds > environment.yml
-
-# 4. Jupyter kernel (so Jupyter sees this env)
-pip install ipykernel
-python -m ipykernel install --user --name=ds_project
-
-# 5. Share with team
-echo "## Setup
-\`\`\`bash
-conda env create -f environment.yml
-conda activate ds_project
-\`\`\`" > README.md
 ```
 
 ### Mixed Workflow (conda + pip)

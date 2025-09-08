@@ -70,6 +70,8 @@ Your Terminal is already installed and ready:
 2. Turn on "Linux development environment"
 3. Follow the setup wizard (takes about 5 minutes)
 4. Access via the Terminal app in your launcher
+5. [More info with this link](https://support.google.com/chromebook/answer/9145439?hl=en
+
 
 ## Understanding Your File System
 
@@ -233,14 +235,20 @@ sudo apt update
 sudo apt install python3          # Python interpreter
 sudo apt install python3-pip      # Python package manager
 sudo apt install python3-venv     # Python virtual environments
+
+# Check Python versions
+python3 --version          # Should show Python 3.x.x
+python --version           # Might not work or show Python 2.x
+
+# Check what's already installed
+which python3              # Shows path: /usr/bin/python3
+which pip3                # Might show nothing if pip not installed
+
 sudo apt install git              # Version control
 sudo apt install curl             # Download files from internet
 sudo apt install sqlite3          # SQLite database
 sudo apt install build-essential  # Compilers and development tools
 
-# Search for packages
-apt search nodejs                 # Find packages related to nodejs
-apt show python3-pip              # Show detailed info about a package
 
 # Upgrade installed packages
 sudo apt upgrade                  # Upgrade all packages
@@ -410,26 +418,38 @@ which python3       # Find where a program is installed
 type cd            # Check if something is a command or alias
 ```
 
-## Common Issues and Solutions
 
-**"Command not found"**
-- The program isn't installed or not in PATH
-- Solution: Install it with apt/brew, or check spelling
+## `$OLDPWD` - Previous Directory
+Your previous working directory (where `cd -` takes you)
 
-**Can't delete a file**
-- File might be in use or protected
-- Solution: Close programs using it
+```bash
+cd /home/user/projects
+cd /var/log
+cp $OLDPWD/myfile.txt .    # Copies from /home/user/projects
+ls $OLDPWD                 # Lists /home/user/projects
+```
 
-**Lost in directories?**
-- Use `pwd` to see where you are
-- Use `cd ~` to go home
-- Use `ls` to see what's around you
+## `$_` - Last Argument
+The last argument of the previous command
 
-**Confused which prompt you're in?**
-- Look at your prompt: `$` or `username@computer` = shell
-- `sqlite>` = you're in SQLite (use `.quit` to exit)
-- `>>>` = you're in Python (use `exit()` to leave)
+```bash
+mkdir /very/long/path/to/new-project
+cd $_                      # Goes to /very/long/path/to/new-project
 
+touch important-file.txt
+vim $_                     # Opens important-file.txt
+```
+
+## `!!` - Last Command
+Entire previous command
+
+```bash
+apt install docker
+sudo !!                   # Runs: sudo apt install docker
+
+rm important.txt
+!!                        # Runs: rm important.txt again
+```
 
 
 📚 **Want to Learn More?**
