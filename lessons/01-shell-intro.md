@@ -14,7 +14,7 @@ The command line (terminal/shell) is an essential tool for programmers and data 
 
 - **Speed**: Once you know a few commands, you'll navigate and manipulate files faster than with a graphical interface
 - **Automation**: Repetitive tasks can be scripted and run instantly
-- **Remote Access**: Most servers don't have graphical interfaces - the shell is your only option
+- **Remote Access**: Most servers don't have graphical interfaces. The shell is your only option
 - **Universal**: These skills transfer across Linux, Mac, and cloud platforms
 - **Power**: Some operations are only possible through the command line
 
@@ -23,9 +23,12 @@ The command line (terminal/shell) is an essential tool for programmers and data 
 
 ### Windows Users: Installing WSL (Windows Subsystem for Linux)
 
-WSL lets you run a real Linux environment directly on Windows - no virtual machine needed! Many programmers should this option now that it is reliable. It lets you keep your windows as you like it but gives you the convinience of Linux for your programming tasks. You also get to keep the Windows native vscode.
+WSL lets you run a real Linux environment directly on Windows. No virtual machine needed!  
+Many programmers should this option now that it is reliable. 
+It lets you keep your windows as you like it but gives you the convenience of Linux for your programming tasks. 
+You also get to keep the Windows native VSCode.
 
-**Quick Setup (5-10 minutes):**
+**Quick Setup (5–10 minutes):**
 1. Open PowerShell as Administrator (right-click → "Run as administrator")
 2. Run this command: `wsl --install` (this will install install the latest Ubuntu distribution)
 3. Restart your computer when prompted
@@ -36,7 +39,7 @@ WSL lets you run a real Linux environment directly on Windows - no virtual machi
    - Windows Terminal (recommended - [install from Microsoft Store](https://aka.ms/terminal))
    - VS Code's integrated terminal
 7. Set up VS Code for WSL development:  [see here](https://code.visualstudio.com/docs/remote/wsl)
-   - Use the Windows native Vscode with the linux environment
+   - Use the Windows native Vscode with the linux environment (combine the best of both world)
    - Install the extensions WSL in vscode
    - Press Ctrl+Shift+P
    - Type "WSL: Connect to WSL" and select it
@@ -55,13 +58,17 @@ WSL lets you run a real Linux environment directly on Windows - no virtual machi
 
 **Quick tip:** To open your current Linux folder in Windows Explorer, type: `explorer.exe .`
 
+### Git Bash
+
+If you are using Windows but can't or don't want to use WSL, you can use git bash ([Install here](https://git-scm.com/downloads/win)). This is a linux shell available on windows. 
+
 ### Mac Users:
 
 Mac offers a clean programming experience with its Unix-based foundation, eliminating the need for a separate Linux environment. The terminal is nearly identical to Linux, making it ideal for Python and SQL development.
 
 Your Terminal is already installed and ready:
 - Find it in: Applications → Utilities → Terminal
-- Or press `Cmd + Space`, type "terminal", and hit Enter
+- Or press `Cmd + Space`, type "terminal," and hit Enter
 - Consider installing [iTerm2](https://iterm2.com/) for a better terminal experience
 
 ### ChromeOS Users: Enable Linux
@@ -125,9 +132,8 @@ cd ../Documents              # Go up one level, then into Documents
 
 ## Essential Shell Commands
 
-Let's learn the commands you'll use every day. Don't memorize them all at once - practice makes perfect!
 
-### Navigation - Moving Around
+### Navigation—Moving Around
 
 ```bash
 pwd                 # Print Working Directory - shows where you are
@@ -145,7 +151,7 @@ cd /               # Go to root directory (top of filesystem)
 cd -               # Go back to previous directory
 ```
 
-### File Operations - Creating and Managing Files
+### File Operations—Creating and Managing Files
 
 ```bash
 # Creating
@@ -221,7 +227,7 @@ date                    # Show current date and time
 
 ## System Package Management
 
-Package managers are like app stores for your command line - they install, update, and manage software at the system level. These are for installing programs like Python, Git, databases, etc.
+Package managers are like app stores for your command line. They install, update, and manage software at the system level. These are for installing programs like Python, Git, databases, etc.
 
 ### Linux (Ubuntu/Debian) - APT
 
@@ -389,6 +395,7 @@ SELECT name, grade FROM students WHERE age > 20;
 - **Ctrl + A**: Jump to beginning of line
 - **Ctrl + E**: Jump to end of line
 - **Ctrl + R**: Search command history (super useful!)
+- **Ctrl + W**: Delete the last word (also beneficial)
 
 ### Time-Saving Tricks
 
