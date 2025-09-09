@@ -6,6 +6,7 @@ title: Home
 # Advanced Python Programming
 
 Welcome to this advanced programming course focusing on Python, development tools, and modern software practices.
+[Access the git repository](https://github.com/KnuxV/advanced_programming_python)
 
 ## Course Overview
 
