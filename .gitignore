@@ -11,3 +11,6 @@ Gemfile.lock
 *~
 .idea/
 venv/
+.venv
+.env
+.git
