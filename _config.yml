@@ -23,20 +23,25 @@ minima:
 header_pages:
   - index.md
 
-# Force all pages to use our custom default layout
+# Force all pages to use our custom page layout (which includes content-wrapper)
 defaults:
   - scope:
       path: ""
       type: "pages"
     values:
-      layout: "default"
+      layout: "page"
   - scope:
       path: "lessons"
       type: "pages"
     values:
-      layout: "default"
+      layout: "page"
   - scope:
       path: "exercices"
       type: "pages"
     values:
-      layout: "default"
+      layout: "page"
+  - scope:
+      path: "code-examples"
+      type: "pages"
+    values:
+      layout: "page"

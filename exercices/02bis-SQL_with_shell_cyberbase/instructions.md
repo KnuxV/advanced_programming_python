@@ -1,3 +1,13 @@
+---
+layout: page
+title: "Department SQL Class Exercise"
+class_number: 3
+date: 2025-08-01
+difficulty: "Intermediate"
+estimated_time: "90 minutes"
+topics: ["sql", "python", "data-analysis"]
+---
+
 # Cyberchase - Exercice SQL en Shell
 
 ![cyb_img](https://cs50.harvard.edu/sql/2024/psets/0/cyberchase/cyberchase.jpg)

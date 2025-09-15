@@ -1,3 +1,13 @@
+---
+layout: page
+title: "Department SQL Class Exercise"
+class_number: 3
+date: 2025-08-01
+difficulty: "Intermediate"
+estimated_time: "90 minutes"
+topics: ["sql", "python", "data-analysis"]
+---
+
 # Department Analytics Practice Exercise
 
 ## Context
