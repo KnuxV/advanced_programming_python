@@ -28,6 +28,16 @@ classes:
       - title: "Git Version Control"
         path: "/lessons/03-git-version-control"
         description: "Understand Git fundamentals, branching strategies, and collaborative development"
+    demos:
+      - title: "Git Terminal Demo"
+        path: "/code-examples/03-git-demo"
+        description: "Live terminal demonstration of Git workflow from init to push"
+      - title: "GitHub Personal Access Tokens"
+        path: "/code-examples/03-git-tokens"
+        description: "Setup guide for using personal access tokens with GitHub"
+      - title: "SSH Keys Setup"
+        path: "/code-examples/03-ssh-demo"
+        description: "Cross-platform guide for setting up SSH authentication with GitHub"
     exercises:
       - title: "Detective Story: Shell Investigation"
         path: "/exercices/03-detective_story"
