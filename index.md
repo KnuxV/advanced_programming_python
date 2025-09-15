@@ -30,6 +30,13 @@ Help shape the course by participating in these anonymous polls:
 {% endfor %}
 {% endif %}
 
+{% if class.demos %}
+### Demos & Guides
+{% for demo in class.demos %}
+- [{{ demo.title }}]({{ demo.path | relative_url }}){% if demo.description %} - {{ demo.description }}{% endif %}
+{% endfor %}
+{% endif %}
+
 {% if class.code_examples %}
 ### Code Examples
 {% for example in class.code_examples %}
