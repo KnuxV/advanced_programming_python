@@ -45,7 +45,10 @@ classes:
       - title: "Git Scrabble Exercise"
         path: "/exercices/04-scrabble_git_exercice"
         description: "Learn Git workflows through a collaborative Scrabble project"
-      - title: "Pull Requests Workshop"
+      - title: "Pull Requests Duo"
+        path: "/exercices/05bis-pull_requests_duo.md"
+        description: "Practice collab in pairs"
+      - title: "Pull Requests to Website"
         path: "/exercices/05-pull_requests"
         description: "Master the art of code collaboration and review"
 
