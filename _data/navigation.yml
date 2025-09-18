@@ -60,12 +60,18 @@ classes:
         path: "/lessons/04-data_structures"
         description: "Deep dive into Python data structures and their practical applications"
     code_examples:
+      - title: "Unpack, Set & Dataclass"
+        path: "/code-examples/03-data_structures/01-unpack_set_dataclass.ipynb"
+        description: "Advanced Python features: unpacking, sets, and dataclasses"
       - title: "Hash Table Implementation"
-        path: "/code-examples/03-data_structures/04-hash_table.ipynb"
+        path: "/code-examples/03-data_structures/02-hash_table.ipynb"
         description: "Understanding hash tables through practical implementation"
-      - title: "SQL Classes Example"
-        path: "/code-examples/04-class_for_sql/departement_example.ipynb"
-        description: "Working with databases using Python classes"
+      - title: "SQL Python Recap"
+        path: "/code-examples/04-class_for_sql/01-sql_python_recap.ipynb"
+        description: "Review of SQL concepts with Python integration"
+      - title: "ORM Classes with SQL"
+        path: "/code-examples/04-class_for_sql/02-orm_classes_sql.ipynb"
+        description: "Object-Relational Mapping using Python classes"
     exercises:
       - title: "Two Sums Problem"
         path: "/exercices/04-data_structures/03-two_sums"
@@ -80,7 +86,7 @@ classes:
         path: "/exercices/04-data_structures/06-country_class"
         description: "Object-oriented programming with Python classes"
       - title: "Department SQL Class"
-        path: "/exercices/07-departement_sql_class"
+        path: "/exercices/05-sql_classes/01-departement_sql_class"
         description: "Combine Python classes with SQL database operations"
 
   - number: 4
