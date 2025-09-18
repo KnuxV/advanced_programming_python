@@ -11,9 +11,7 @@ topics: ["sql", "python", "data-analysis"]
 # Department Analytics Practice Exercise
 
 ## Context
-
 This exercise uses SQLAlchemy ORM with two database tables representing French administrative data:
-
 - **`Departement`** table: French departments with administrative information
 - **`Ville`** table: French cities/communes with population and geographic data
 
@@ -30,7 +28,9 @@ Answer the following using the two tables (Departement and Ville):
 **Objective:** Find departments with the highest total population.
 
 **Calculation:**
-$$\text{total\_population} = \sum_{\text{cities in dept}} \text{population\_2012}$$
+```
+total_population = sum(population_2012 for all cities in department)
+```
 
 **Return:** `department_name`, `department_code`, `total_population`  
 **Sort:** By total_population (descending), limit 5
@@ -42,11 +42,13 @@ $$\text{total\_population} = \sum_{\text{cities in dept}} \text{population\_2012
 **Objective:** Find departments with the highest population per unit area.
 
 **Calculation:**
-$$\text{density} = \frac{\text{total\_population}}{\text{total\_surface}}$$
+```
+density = total_population / total_surface
+```
 
 Where:
-- $\text{total\_population} = \sum_{\text{cities in dept}} \text{population\_2012}$
-- $\text{total\_surface} = \sum_{\text{cities in dept}} \text{surface}$
+- `total_population = sum(population_2012 for all cities in department)`
+- `total_surface = sum(surface for all cities in department)`
 
 **Return:** `department_name`, `department_code`, `density`  
 *(optionally include `total_population` and `total_surface` for context)*
@@ -61,21 +63,36 @@ Where:
 
 **Mathematical Definition:**
 
-For department $Dep$ with cities $city \in Dep$ having populations $pop\_city$:
+For department `Dep` with cities having populations `pop_city`:
 
-**City population share:**
-$$share\_city = \frac{pop\_city}{pop\_dep}$$
+**Step 1 - City population share:**
+```
+share_city = pop_city / pop_department
+```
 
-**Herfindahl-Hirschman Index:**
-$$HHI(Dep) = \sum_{city \in Dep} share\_city^2$$
+**Step 2 - Herfindahl-Hirschman Index:**
+```
+HHI(Dep) = sum(share_city² for all cities in Dep)
+```
 
-**Scaled version (0-10,000):**
-$$HHI_{\text{scaled}}(Dep) = 10,000 \times \sum_{city \in Dep} share\_city^2$$
+**Step 3 - Scaled version (0-10,000):**
+```
+HHI_scaled(Dep) = 10,000 × sum(share_city² for all cities in Dep)
+```
 
 **Interpretation:**
-- HHI = 10,000: Perfect concentration (one city dominates)
-- HHI → 0: Many cities with small individual shares
+- HHI = 10,000: Perfect concentration (one city dominates completely)
+- HHI → 0: Many cities with equally small individual population shares
 
 **Return:** `department_name`, `department_code`, `HHI_scaled`, `number_of_cities`
 
 **Discussion:** Analyze Paris (department 75) results. Why is its HHI extreme? What does this reveal about population distribution across its cities?
+
+---
+
+## Implementation Tips
+
+1. **Use SQLAlchemy ORM** to join the tables and aggregate data
+2. **Handle edge cases** like departments with no cities or zero surface areas
+3. **Consider using SQL functions** like `SUM()`, `COUNT()`, and mathematical operations
+4. **Test your queries** on a few departments first before running on the full dataset
