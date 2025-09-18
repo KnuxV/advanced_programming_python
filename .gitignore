@@ -14,3 +14,9 @@ venv/
 .venv
 .env
 .git
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Alternative patterns (more comprehensive)
+**/.ipynb_checkpoints/
+*.ipynb_checkpoints
